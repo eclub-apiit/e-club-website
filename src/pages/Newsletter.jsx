@@ -146,7 +146,7 @@ export default function Newsletter() {
             description="Before Innovator's Digest, the club ran a monthly newsletter recapping every project, workshop, and event."
           />
 
-          <RevealGroup className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" stagger={0.06}>
+          <RevealGroup className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" stagger={0.06} amount={0.05}>
             {entrepreneurialPulse.map((issue) => (
               <RevealItem key={issue.issue}>
                 <Card className="group h-full overflow-hidden p-0">

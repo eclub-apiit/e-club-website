@@ -42,7 +42,7 @@ export default function Footer() {
 
       <p
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-10 left-1/2 w-full -translate-x-1/2 select-none whitespace-nowrap text-center text-[11rem] font-bold leading-none tracking-tight text-white/[0.04] sm:text-[14rem]"
+        className="pointer-events-none absolute -bottom-10 left-1/2 w-full -translate-x-1/2 select-none whitespace-nowrap text-center text-5xl font-bold leading-none tracking-tight text-white/[0.04] sm:text-8xl md:text-9xl lg:text-[11rem] xl:text-[14rem]"
       >
         APIIT E-CLUB
       </p>
