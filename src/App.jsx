@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import { ScrollProgressBar } from "./components/ui/ProgressIndicator";
 import { ToastProvider } from "./components/ui/Toast";
@@ -21,10 +21,13 @@ import SandboxSponsors from "./pages/sandbox/Sponsors";
 import SandboxWhatWeOffer from "./pages/sandbox/WhatWeOffer";
 
 function App() {
+  const { pathname } = useLocation();
+  const isSandbox = pathname.startsWith("/sandbox");
+
   return (
     <ToastProvider>
       <ScrollToTop />
-      <ScrollProgressBar />
+      {!isSandbox && <ScrollProgressBar />}
       <CursorGlow />
       <Routes>
         <Route element={<MainLayout />}>
