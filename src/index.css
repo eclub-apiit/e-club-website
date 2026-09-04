@@ -156,6 +156,21 @@ body {
   background: var(--color-teal);
 }
 
+/* Sandbox pages sit on a dark background where the site's teal scrollbar
+   tint looks out of place; use a neutral translucent thumb instead
+   (toggled via a class on <html>, since .sandbox-scope doesn't scroll
+   itself — see SandboxLayout.jsx). */
+html.sandbox-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+html.sandbox-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+html.sandbox-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 /* ---- Sandbox sub-site (ported from the standalone Next.js sandbox-website) ---- */
 
 @font-face {
