@@ -28,7 +28,7 @@ export const CATEGORIES = [
 export const TEAM = [
   // --- Leadership ---
   { name: 'Sudeesha Fonseka', role: 'President of Entrepreneurship Club', category: 'leadership', image: '/sandbox/assets/Sudeesha Fonseka Treasurer.webp', linkedin: '', bio: 'President of the Entrepreneurship Club.' },
-  { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/sandbox/assets/Maneesha Thatuwalakanda communications.webp', linkedin: '', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
+  { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/sandbox/assets/Maneesha Thatuwalakanda communications.webp', linkedin: 'https://www.linkedin.com/in/maneesha-thatuwalakanda-850790267', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
   { name: 'Himansa Indusara', role: 'Chairperson', category: 'leadership', image: '/sandbox/assets/Himansa Indusara Communication.webp', linkedin: '', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
   { name: 'Ayodya Perera', role: 'Project Coordinator', category: 'leadership', image: '/sandbox/assets/Ayodya Sasuni Perera Marketing.webp', linkedin: '', bio: 'Coordinates the Sandbox 3.0 project across every sub-team.' },
   { name: 'Tyanna Franchesca Avory', role: 'Secretary', category: 'leadership', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/tyanna-avory-a879a32b2', bio: 'Secretary of the Sandbox 3.0 organising committee.', education: 'BSc (Hons) Computer Science' },
@@ -124,7 +124,7 @@ export const PAST_TEAMS = [
       { group: 'Committee Members', name: 'Nohim Roosara Vidanapathirana', role: 'Media', image: '/sandbox/assets/Nohim Roosara Vidanapathirana media .webp', linkedin: '' },
       { group: 'Committee Members', name: 'Kulthoom Husni', role: 'Media', image: '/sandbox/assets/Kulthoom Husni media.webp', linkedin: '' },
       { group: 'Committee Members', name: 'Himansa Indusara', role: 'Communications', image: '/sandbox/assets/Himansa Indusara Communication.webp', linkedin: '' },
-      { group: 'Committee Members', name: 'Maneesha Thatuwalakanda', role: 'Communications', image: '/sandbox/assets/Maneesha Thatuwalakanda communications.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Maneesha Thatuwalakanda', role: 'Communications', image: '/sandbox/assets/Maneesha Thatuwalakanda communications.webp', linkedin: 'https://www.linkedin.com/in/maneesha-thatuwalakanda-850790267' },
       { group: 'Committee Members', name: 'Sajali Yehansa Waidyaratne', role: 'Communications', image: '/sandbox/assets/Sajali Yehansa Waidyaratne communications.webp', linkedin: '' },
       { group: 'Committee Members', name: 'Keiseray Zahir', role: 'Communications', image: '/sandbox/assets/Keiseray Zahir communications.webp', linkedin: '' },
       { group: 'Committee Members', name: 'Keith Jason Moraes', role: 'Logistics', image: '/sandbox/assets/Keith Jason Moraes logistics.webp', linkedin: '' },

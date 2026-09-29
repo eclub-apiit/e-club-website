@@ -4,8 +4,7 @@ import { ChevronRight } from 'lucide-react';
 import { useHeroCta } from '../ui/HeroCtaContext';
 import PartnersTicker from './PartnersTicker';
 
-// TODO: Replace with exact registration deadline when provided
-const REGISTRATION_DEADLINE = new Date('2026-09-30T23:59:59+05:30');
+const REGISTRATION_DEADLINE = new Date('2026-10-30T23:59:59+05:30');
 
 const Dial = ({ label, value, size = "large", theme = "dark" }) => {
   const numClasses = size === "small"

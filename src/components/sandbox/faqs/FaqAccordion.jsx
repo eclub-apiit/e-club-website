@@ -25,7 +25,7 @@ const FAQ_DATA = [
   },
   {
     question: "What is the deadline for registration?",
-    answer: "Registrations for this edition will close on September 30th. Ensure your team signs up before the deadline!"
+    answer: "Registrations for this edition will close on October 30th. Ensure your team signs up before the deadline!"
   },
   {
     question: "Do we need a prototype to pitch?",

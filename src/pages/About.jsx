@@ -77,7 +77,7 @@ const departments = [
   {
     name: "Communication",
     members: [
-      { name: "Maneesha Vidani", img: "/committee/web/coms-1.jpg" },
+      { name: "Maneesha Thatuwalakanda", img: "/committee/web/coms-1.jpg", linkedin: "https://www.linkedin.com/in/maneesha-thatuwalakanda-850790267" },
       { name: "Mohomed Yunus", img: "/committee/web/coms-2.jpg", linkedin: "https://www.linkedin.com/in/yunusnuhman/" },
     ],
   },

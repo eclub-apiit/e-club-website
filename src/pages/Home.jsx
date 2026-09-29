@@ -15,7 +15,7 @@ import TextReveal from "../components/ui/TextReveal";
 import Tooltip from "../components/ui/Tooltip";
 import { cn } from "../lib/cn";
 
-const SANDBOX_DEADLINE = new Date("2026-09-30T23:59:59+05:30");
+const SANDBOX_DEADLINE = new Date("2026-10-30T23:59:59+05:30");
 
 function SandboxCountdown() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
