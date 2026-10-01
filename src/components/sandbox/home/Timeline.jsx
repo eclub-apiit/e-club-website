@@ -20,17 +20,17 @@ const MILESTONES = [
   },
   {
     date: '3rd week of November',
-    title: 'First Rounds',
+    title: 'Preliminary Round',
     desc: 'Teams pitch their ideas as the competition kicks into gear.',
   },
   {
     date: '1st week of January 2027',
-    title: 'Semi-Finale',
+    title: 'Semifinals',
     desc: 'The strongest teams battle it out for a place in the Grand Finale.',
   },
   {
     date: '26th of January 2027',
-    title: 'Finale',
+    title: 'Grand Finale',
     desc: 'The top teams face off live for the championship.',
   },
 ];
