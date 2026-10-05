@@ -42,6 +42,7 @@ const Colon = ({ size = "large", theme = "dark" }) => (
 
 export default function SandboxHero() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isClosed, setIsClosed] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [barOnLight, setBarOnLight] = useState(false);
   const [headlineIndex, setHeadlineIndex] = useState(1);
@@ -73,6 +74,9 @@ export default function SandboxHero() {
           minutes: Math.floor((difference / 1000 / 60) % 60),
           seconds: Math.floor((difference / 1000) % 60),
         });
+        setIsClosed(false);
+      } else {
+        setIsClosed(true);
       }
     }, 1000);
 
@@ -182,22 +186,30 @@ export default function SandboxHero() {
 
               {/* Inline Hero Countdown */}
               <ScrollReveal delay={500}>
-                <div className="flex justify-center items-start gap-4 md:gap-6 mt-6">
-                  {[
-                    { label: 'Days', value: timeLeft.days },
-                    { label: 'Hours', value: timeLeft.hours },
-                    { label: 'Minutes', value: timeLeft.minutes },
-                    { label: 'Seconds', value: timeLeft.seconds }
-                  ].map((item, idx) => (
-                    <React.Fragment key={idx}>
-                      {idx > 0 && <Colon />}
-                      <Dial label={item.label} value={item.value} />
-                    </React.Fragment>
-                  ))}
-                </div>
-                <p className="text-lg md:text-xl text-slate-400 text-center mt-6 leading-relaxed">
-                  Until Registrations Close!
-                </p>
+                {!isClosed ? (
+                  <>
+                    <div className="flex justify-center items-start gap-4 md:gap-6 mt-6">
+                      {[
+                        { label: 'Days', value: timeLeft.days },
+                        { label: 'Hours', value: timeLeft.hours },
+                        { label: 'Minutes', value: timeLeft.minutes },
+                        { label: 'Seconds', value: timeLeft.seconds }
+                      ].map((item, idx) => (
+                        <React.Fragment key={idx}>
+                          {idx > 0 && <Colon />}
+                          <Dial label={item.label} value={item.value} />
+                        </React.Fragment>
+                      ))}
+                    </div>
+                    <p className="text-lg md:text-xl text-slate-400 text-center mt-6 leading-relaxed">
+                      Until Registrations Close!
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-2xl md:text-3xl font-bold text-white text-center mt-6 leading-relaxed">
+                    Registrations are now closed!
+                  </p>
+                )}
               </ScrollReveal>
               {/* <PartnersTicker /> */}
             </div>
@@ -207,9 +219,10 @@ export default function SandboxHero() {
       </section>
 
       {/* Sticky Compact Countdown & CTA */}
-      <div
-        className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/20 backdrop-blur-2xl border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.4)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
-      >
+      {!isClosed && (
+        <div
+          className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/20 backdrop-blur-2xl border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.4)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
+        >
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-center gap-6">
 
           <div className="hidden md:flex flex-col items-end">
@@ -232,7 +245,8 @@ export default function SandboxHero() {
           </div>
 
         </div>
-      </div>
+        </div>
+      )}
     </>
   );
 }

@@ -6,7 +6,11 @@ import ScrollReveal from '../ui/ScrollReveal'
 export default function MeetTheTeamSection() {
   const [active, setActive] = useState('all')
 
-  const members = active === 'all' ? TEAM : TEAM.filter((m) => m.category === active)
+  const members = active === 'all'
+    ? TEAM
+    : TEAM.filter((m) =>
+        Array.isArray(m.category) ? m.category.includes(active) : m.category === active
+      )
 
   return (
     <section className="relative px-4 py-16 w-full overflow-hidden">

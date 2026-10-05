@@ -115,14 +115,12 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                 >
                   Past Editions
                 </Link>
-                {/* "Meet the Team" hidden
                 <Link
                   to="/sandbox/about/team"
                   className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
                 >
                   Meet the Team
                 </Link>
-                */}
               </div>
             </div>
           </li>
@@ -321,7 +319,6 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   >
                     Past Editions
                   </Link>
-                  {/* "Meet the Team" hidden
                   <Link
                     to="/sandbox/about/team"
                     onClick={() => setMenuOpen(false)}
@@ -329,7 +326,6 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   >
                     Meet the Team
                   </Link>
-                  */}
                 </div>
               </div>
             </li>
