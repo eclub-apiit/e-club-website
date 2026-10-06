@@ -20,7 +20,7 @@ export default function IntroSection() {
                 Sandbox isn't just a competition; it's an accelerator for student potential. Here's what you gain by participating.
               </p>
               <p className="mt-6 text-slate-400 leading-relaxed">
-                Every year, thousands of students have an idea worth building - but few have access to the mentorship, capital, and network that turns that idea into something real. Sandbox exists to close that gap. Whether you're refining a business plan for the first time or preparing to pitch to your first investor, this is the platform built to get you there.
+                Every year, thousands of students have an idea worth building but few have access to the mentorship, capital, and network that turns that idea into something real. Sandbox exists to close that gap. Whether you're refining a business plan for the first time or preparing to pitch to your first investor, this is the platform built to get you there.
               </p>
             </div>
           </ScrollReveal>
