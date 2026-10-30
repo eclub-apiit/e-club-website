@@ -4,7 +4,28 @@ import { ChevronRight } from 'lucide-react';
 import { useHeroCta } from '../ui/HeroCtaContext';
 import PartnersTicker from './PartnersTicker';
 
-const REGISTRATION_DEADLINE = new Date('2026-10-30T23:59:59+05:30');
+// All targets use Sri Lanka time (UTC+05:30) so visitors see the same schedule.
+const MILESTONES = [
+  { label: 'REGISTRATIONS CLOSE IN', target: new Date('2026-11-30T23:59:59+05:30') },
+  { label: 'WORKSHOPS IN', target: new Date('2026-12-02T00:00:00+05:30') },
+  { label: 'PRELIMINARY ROUND IN', target: new Date('2027-01-07T00:00:00+05:30') },
+  { label: 'SEMI-FINALE IN', target: new Date('2027-01-14T00:00:00+05:30') },
+  { label: 'GRAND FINALE AND AWARD CEREMONY IN', target: new Date('2027-01-26T00:00:00+05:30') },
+];
+
+function getActiveMilestone(now) {
+  return MILESTONES.find((milestone) => milestone.target.getTime() > now) ?? null;
+}
+
+function computeTimeLeft(diffMs) {
+  const total = Math.max(0, diffMs);
+  return {
+    days: Math.floor(total / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((total / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((total / (1000 * 60)) % 60),
+    seconds: Math.floor((total / 1000) % 60),
+  };
+}
 
 const Dial = ({ label, value, size = "large", theme = "dark" }) => {
   const numClasses = size === "small"
@@ -42,10 +63,13 @@ const Colon = ({ size = "large", theme = "dark" }) => (
 
 export default function SandboxHero() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [isClosed, setIsClosed] = useState(false);
+  const [activeMilestone, setActiveMilestone] = useState(() => getActiveMilestone(Date.now()));
+  const [isClosed, setIsClosed] = useState(() => getActiveMilestone(Date.now()) === null);
   const [isSticky, setIsSticky] = useState(false);
   const [barOnLight, setBarOnLight] = useState(false);
   const [headlineIndex, setHeadlineIndex] = useState(1);
+  const [labelVisible, setLabelVisible] = useState(true);
+  const previousLabel = useRef(null);
   const heroRef = useRef(null);
   const heroCtaRef = useRef(null);
   const { setHeroCtaVisible } = useHeroCta();
@@ -63,22 +87,29 @@ export default function SandboxHero() {
   }, [setHeroCtaVisible]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      const now = new Date();
-      const difference = REGISTRATION_DEADLINE.getTime() - now.getTime();
+    const tick = () => {
+      const now = Date.now();
+      const milestone = getActiveMilestone(now);
 
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        });
-        setIsClosed(false);
-      } else {
+      if (!milestone) {
         setIsClosed(true);
+        setActiveMilestone(null);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
       }
-    }, 1000);
+
+      if (previousLabel.current !== null && previousLabel.current !== milestone.label) {
+        setLabelVisible(false);
+        window.setTimeout(() => setLabelVisible(true), 200);
+      }
+      previousLabel.current = milestone.label;
+      setActiveMilestone(milestone);
+      setIsClosed(false);
+      setTimeLeft(computeTimeLeft(milestone.target.getTime() - now));
+    };
+
+    tick();
+    const timer = setInterval(tick, 1000);
 
     const handleScroll = () => {
       if (heroRef.current) {
@@ -110,8 +141,6 @@ export default function SandboxHero() {
     const id = setInterval(() => setHeadlineIndex((i) => (i === 0 ? 1 : 0)), 5000);
     return () => clearInterval(id);
   }, []);
-
-  const daysLeft = Math.max(0, Math.ceil((REGISTRATION_DEADLINE.getTime() - Date.now()) / 86400000));
 
   return (
     <>
@@ -218,16 +247,29 @@ export default function SandboxHero() {
         </div>
       </section>
 
-      {/* Sticky Compact Countdown & CTA */}
-      {!isClosed && (
-        <div
+      {/* Sticky Compact Countdown */}
+      <div
           className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/20 backdrop-blur-2xl border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.4)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
         >
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-center gap-6">
 
-          <div className="hidden md:flex flex-col items-end">
-             <span className={`text-sm font-semibold uppercase tracking-wider ${barOnLight ? 'text-slate-600' : 'text-slate-300'}`}>Registrations close in</span>
-          </div>
+          {isClosed ? (
+            <span className={`text-sm font-semibold uppercase tracking-wider ${barOnLight ? 'text-slate-600' : 'text-slate-300'}`}>
+              SANDBOX 3.0 HAS CONCLUDED
+            </span>
+          ) : (
+            <>
+              <div className="hidden md:flex flex-col items-end">
+                <span
+                  className={`font-semibold uppercase tracking-wider transition-all duration-200 ${barOnLight ? 'text-slate-600' : 'text-slate-300'} ${labelVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1'}`}
+                  style={{ fontSize: activeMilestone && activeMilestone.label.length > 25 ? '0.7rem' : '0.875rem' }}
+                >
+                  <span className="hidden sm:inline">{activeMilestone?.label ?? ''}</span>
+                  <span className="sm:hidden">
+                    {activeMilestone?.label === 'GRAND FINALE AND AWARD CEREMONY IN' ? 'GRAND FINALE IN' : (activeMilestone?.label ?? '')}
+                  </span>
+                </span>
+              </div>
 
           {/* Ticking Numbers */}
           <div className={`flex items-start gap-3 md:gap-4 md:border-l md:pl-6 ${barOnLight ? 'md:border-slate-400/40' : 'md:border-white/10'}`}>
@@ -244,9 +286,11 @@ export default function SandboxHero() {
             ))}
           </div>
 
+            </>
+          )}
+
         </div>
         </div>
-      )}
     </>
   );
 }

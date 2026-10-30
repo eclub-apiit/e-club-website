@@ -9,28 +9,28 @@ const MILESTONES = [
     desc: 'Schools nationwide can now sign up their teams for Sandbox 3.0.',
   },
   {
-    date: '30th of October',
+    date: '30th of November',
     title: 'Registrations Close',
     desc: 'Last call for teams to lock in their spot before the competition kicks off.',
   },
   {
-    date: '1st week of November',
+    date: '2nd of December',
     title: 'Workshops',
     desc: 'Engaging and interactive workshops to aid participants in their preparation.',
   },
   {
-    date: '3rd week of November',
+    date: '7th of January 2027',
     title: 'Preliminary Round',
     desc: 'Teams pitch their ideas as the competition kicks into gear.',
   },
   {
-    date: '1st week of January 2027',
-    title: 'Semifinals',
+    date: '14th of January 2027',
+    title: 'Semi-Finale',
     desc: 'The strongest teams battle it out for a place in the Grand Finale.',
   },
   {
     date: '26th of January 2027',
-    title: 'Grand Finale',
+    title: 'Grand Finale and Award Ceremony',
     desc: 'The top teams face off live for the championship.',
   },
 ];
