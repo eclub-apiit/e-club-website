@@ -1,56 +1,21 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/layout/ScrollToTop";
-import { ScrollProgressBar } from "./components/ui/ProgressIndicator";
-import { ToastProvider } from "./components/ui/Toast";
-import CursorGlow from "./components/ui/CursorGlow";
-import MainLayout from "./layouts/MainLayout";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Events from "./pages/Events";
-import Newsletter from "./pages/Newsletter";
-import Contact from "./pages/Contact";
 
-import SandboxLayout from "./components/sandbox/layout/SandboxLayout";
-import SandboxHome from "./pages/sandbox/Home";
-import SandboxAbout from "./pages/sandbox/About";
-import SandboxAboutEditions from "./pages/sandbox/AboutEditions";
-import SandboxAboutTeam from "./pages/sandbox/AboutTeam";
-import SandboxContact from "./pages/sandbox/Contact";
-import SandboxFaqs from "./pages/sandbox/Faqs";
-import SandboxSponsors from "./pages/sandbox/Sponsors";
-import SandboxWhatWeOffer from "./pages/sandbox/WhatWeOffer";
+// Direct summit visits only load the event experience, not the club and Sandbox pages.
+const ClubRoutes = lazy(() => import("./ClubRoutes"));
+const SummitPage = lazy(() => import("./features/summit/SummitPage"));
 
-function App() {
-  const { pathname } = useLocation();
-  const isSandbox = pathname.startsWith("/sandbox");
-
-  return (
-    <ToastProvider>
-      <ScrollToTop />
-      {!isSandbox && <ScrollProgressBar />}
-      <CursorGlow />
+export default function App() {
+  const { pathname, search, hash } = useLocation();
+  const isSummit = pathname.startsWith("/convergence-summit-2026");
+  return <>
+    <ScrollToTop />
+    <Suspense fallback={<div role="status" style={{ minHeight: "100svh", background: isSummit ? "#061719" : "#fafaf8", color: isSummit ? "#a7eccd" : "#0b3d2e", display: "grid", placeItems: "center", fontFamily: "sans-serif" }}>{isSummit ? "Entering Convergence…" : "Loading E-Club…"}</div>}>
       <Routes>
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/newsletter" element={<Newsletter />} />
-          <Route path="/contact" element={<Contact />} />
-        </Route>
-
-        <Route path="/sandbox" element={<SandboxLayout />}>
-          <Route index element={<SandboxHome />} />
-          <Route path="about" element={<SandboxAbout />} />
-          <Route path="about/editions" element={<SandboxAboutEditions />} />
-          <Route path="about/team" element={<SandboxAboutTeam />} />
-          <Route path="contact" element={<SandboxContact />} />
-          <Route path="faqs" element={<SandboxFaqs />} />
-          <Route path="sponsors" element={<SandboxSponsors />} />
-          <Route path="what-we-offer" element={<SandboxWhatWeOffer />} />
-        </Route>
+        <Route path="/convergence-summit-2026/*" element={pathname === "/convergence-summit-2026/" ? <SummitPage /> : <Navigate to={{ pathname: "/convergence-summit-2026/", search, hash }} replace />} />
+        <Route path="/*" element={<ClubRoutes />} />
       </Routes>
-    </ToastProvider>
-  );
+    </Suspense>
+  </>;
 }
-
-export default App;

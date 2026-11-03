@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { cn } from "../../lib/cn";
 import Button from "../ui/Button";
 
@@ -55,7 +55,7 @@ export default function Navbar() {
           />
         </NavLink>
 
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1 xl:flex">
           {LINKS.map((link) => (
             <NavLink
               key={link.to}
@@ -83,10 +83,13 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-2 xl:flex">
           <Button as={NavLink} to="/sandbox" variant="sandbox" size="md">
             Sandbox
           </Button>
+          <NavLink to="/convergence-summit-2026/" className={cn("inline-flex items-center gap-3 rounded-full border px-5 py-3 text-sm font-semibold transition-colors", solid ? "border-teal/40 bg-teal/5 text-dark-green hover:bg-teal/10" : "border-[#77d9c2]/60 bg-[#77d9c2]/5 text-[#a5eed9] hover:bg-[#77d9c2]/15")}>
+            Convergence Summit <ArrowUpRight className="h-4 w-4" aria-hidden="true"/>
+          </NavLink>
         </div>
 
         <button
@@ -94,7 +97,7 @@ export default function Navbar() {
           aria-label="Toggle menu"
           onClick={() => setOpen((o) => !o)}
           className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-full lg:hidden",
+            "flex h-10 w-10 items-center justify-center rounded-full xl:hidden",
             solid ? "text-dark-green" : "text-white"
           )}
         >
@@ -109,7 +112,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-black/5 bg-white/95 backdrop-blur-xl lg:hidden"
+            className="overflow-hidden border-t border-black/5 bg-white/95 backdrop-blur-xl xl:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-6">
               {LINKS.map((link, i) => (
@@ -142,6 +145,9 @@ export default function Navbar() {
               >
                 Sandbox
               </Button>
+              <NavLink to="/convergence-summit-2026/" onClick={() => setOpen(false)} className="mt-2 flex w-full items-center justify-center gap-3 rounded-full border border-teal/40 bg-teal/5 px-4 py-3 text-sm font-semibold text-dark-green hover:bg-teal/10">
+                Convergence Summit <ArrowUpRight className="h-4 w-4" aria-hidden="true"/>
+              </NavLink>
             </div>
           </motion.div>
         )}
