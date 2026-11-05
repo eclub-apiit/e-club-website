@@ -16,28 +16,31 @@ import Container from "../components/ui/Container";
 import Reveal from "../components/ui/Reveal";
 import EventModal from "../components/sections/events/EventModal";
 import SignatureMotif from "../components/ui/SignatureMotif";
-import { EVENTS, ACADEMIC_TERMS } from "../data/events";
+import { EVENTS, ACADEMIC_TERMS, eventYear, eventPreview } from "../data/events";
+import "./events.css";
 
 export default function Events() {
-  const [selectedTerm, setSelectedTerm] = useState("2024-2025");
+  const [selectedTerm, setSelectedTerm] = useState(ACADEMIC_TERMS[0].id);
   const [viewMode, setViewMode] = useState("grid"); // "grid" | "timeline"
   const [search, setSearch] = useState("");
   const [activeModalEvent, setActiveModalEvent] = useState(null);
 
   // Lookbook curated snapshot photos for the top strip
   const lookbookPhotos = [
-    { src: "/events/2026/Empower Her - 1.jpg", title: "Empower Her Forum", term: "2025–26", id: "empower-her-2026" },
-    { src: "/events/2025/Sandbox 2.0.jpg", title: "SANDBOX 2.0 Grand Finale", term: "2024–25", id: "sandbox-2-0-2025" },
-    { src: "/events/2026/Icebreaker.jpg", title: "Freshers' Icebreaker", term: "2025–26", id: "icebreaker-2026" },
-    { src: "/events/2025/Voices of Her 2025.png", title: "Voices of Her", term: "2024–25", id: "voices-of-her-2025" },
-    { src: "/events/2025/Startup Pulse.png", title: "Startup Pulse", term: "2024–25", id: "startup-pulse-2025" },
-    { src: "/events/2026/Cal Workshop.jpg", title: "CAL Investment Masterclass", term: "2025–26", id: "cal-workshop-2026" },
-    { src: "/events/2025/Mati Strokes.png", title: "Mati Strokes Studio", term: "2024–25", id: "mati-strokes-2025" },
-    { src: "/events/2024/Sandbox 01 - 2024.png", title: "Sandbox Interschool Day 01", term: "2023–24", id: "sandbox-day-01-2024" },
-    { src: "/events/2024/FoodFest 2024.png", title: "FoodFest Fun Fair", term: "2023–24", id: "foodfest-fun-fair-2024" },
-    { src: "/events/2024/Her Story 2024.png", title: "Project HerStory", term: "2023–24", id: "project-herstory-2024" },
-    { src: "/events/2023/Startup Summit 2023 - 1.png", title: "Start-Up Summit 2023", term: "2022–23", id: "startup-summit-2023" },
-    { src: "/events/2023/AGM 2022-23 - 1.png", title: "E-Club Revival AGM", term: "2022–23", id: "agm-2022-2023" },
+    { title: "Clay Labs", term: "2026", id: "clay-labs-2026" },
+    { title: "The Boardroom", term: "2026", id: "the-boardroom-2026" },
+    { src: "/events/2026/Empower Her - 1.jpg", title: "Empower Her Forum", term: "2026", id: "empower-her-2026" },
+    { src: "/events/2025/Sandbox 2.0.jpg", title: "SANDBOX 2.0 Grand Finale", term: "2025", id: "sandbox-2-0-2025" },
+    { src: "/events/2026/Icebreaker.jpg", title: "Freshers' Icebreaker", term: "2026", id: "icebreaker-2026" },
+    { src: "/events/2025/Voices of Her 2025.png", title: "Voices of Her", term: "2025", id: "voices-of-her-2025" },
+    { src: "/events/2025/Startup Pulse.png", title: "Startup Pulse", term: "2025", id: "startup-pulse-2025" },
+    { src: "/events/2026/Cal Workshop.jpg", title: "CAL Investment Masterclass", term: "2026", id: "cal-workshop-2026" },
+    { src: "/events/2025/Mati Strokes.png", title: "Mati Strokes Studio", term: "2025", id: "mati-strokes-2025" },
+    { src: "/events/2024/Sandbox 01 - 2024.png", title: "Sandbox Interschool Day 01", term: "2024", id: "sandbox-day-01-2024" },
+    { src: "/events/2024/FoodFest 2024.png", title: "FoodFest Fun Fair", term: "2024", id: "foodfest-fun-fair-2024" },
+    { src: "/events/2024/Her Story 2024.png", title: "Project HerStory", term: "2024", id: "project-herstory-2024" },
+    { src: "/events/2023/Startup Summit 2023 - 1.png", title: "Start-Up Summit 2023", term: "2023", id: "startup-summit-2023" },
+    { src: "/events/2023/AGM 2022-23 - 1.png", title: "E-Club Revival AGM", term: "2023", id: "agm-2022-2023" },
   ];
 
   // Filtered Events (no category filter)
@@ -70,7 +73,7 @@ export default function Events() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfbf9] text-ink font-sans selection:bg-gold selection:text-dark-green">
+    <div className="club-events min-h-screen bg-[#fcfbf9] text-ink font-sans selection:bg-gold selection:text-dark-green">
 
       {/* ================================================================ */}
       {/* HERO + LOOKBOOK STRIP                                             */}
@@ -85,9 +88,10 @@ export default function Events() {
         />
 
         <Container className="relative">
-          <div className="max-w-3xl">
+          <div className="events-introduction">
+            <p className="text-xs font-semibold uppercase tracking-[.24em] text-gold-light">The E-Club event archive · 2023—2026</p>
             <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-white">
-              Events
+              Good ideas.<br/><span className="text-gold-light">Great company.</span>
             </h1>
 
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-white/80 max-w-2xl font-normal">
@@ -95,20 +99,27 @@ export default function Events() {
             </p>
           </div>
 
+          <div className="mt-8 flex flex-wrap gap-8 border-t border-white/15 pt-6 text-sm text-white/70">
+            <p><strong className="mr-2 text-2xl font-semibold text-white">{EVENTS.length}</strong> stories to explore</p>
+            <p><strong className="mr-2 text-2xl font-semibold text-white">{ACADEMIC_TERMS.length}</strong> years of making things happen</p>
+          </div>
+
           {/* Lookbook Strip */}
           <div className="mt-10 overflow-x-auto pb-2 no-scrollbar">
             <div className="flex gap-4 min-w-max">
-              {lookbookPhotos.map((photo, idx) => (
-                <div
-                  key={idx}
+              {lookbookPhotos.map((photo) => (
+                <button
+                  type="button"
+                  key={photo.id}
+                  aria-label={`Read ${photo.title}`}
                   onClick={() => {
                     const match = EVENTS.find((e) => e.id === photo.id);
                     if (match) setActiveModalEvent(match);
                   }}
-                  className="group relative h-44 w-64 sm:h-48 sm:w-72 cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-black/40 shadow-md transition-all duration-300 hover:border-gold/60 hover:-translate-y-1 hover:shadow-xl"
+                  className="group relative text-left h-36 w-60 sm:h-44 sm:w-72 cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-black/40 shadow-md transition-all duration-300 hover:border-gold/60 hover:-translate-y-1 hover:shadow-xl"
                 >
                   <img
-                    src={photo.src}
+                    src={eventPreview(EVENTS.find(event => event.id === photo.id))}
                     alt={photo.title}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
@@ -127,7 +138,7 @@ export default function Events() {
                       <ArrowUpRight className="h-3 w-3" />
                     </span>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           </div>
@@ -137,7 +148,7 @@ export default function Events() {
       {/* ================================================================ */}
       {/* CONTROL BAR: TERMS, VIEW MODE, SEARCH                            */}
       {/* ================================================================ */}
-      <section className="sticky top-16 z-30 border-b border-stone-200/70 bg-[#fcfbf9]/95 backdrop-blur-md sm:top-20 py-3.5 shadow-sm">
+      <section aria-label="Filter events" className="events-controls sticky top-16 z-30 border-b border-stone-200/70 bg-[#fcfbf9]/95 backdrop-blur-md sm:top-20 py-3.5 shadow-sm">
         <Container>
           <div className="flex flex-wrap items-center justify-between gap-3">
             {/* Term Pills */}
@@ -153,6 +164,7 @@ export default function Events() {
                     key={term.id}
                     type="button"
                     onClick={() => setSelectedTerm(term.id)}
+                    aria-pressed={active}
                     className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
                       active
                         ? "bg-dark-green text-white shadow-sm"
@@ -179,6 +191,7 @@ export default function Events() {
                   type="button"
                   onClick={() => setViewMode("grid")}
                   title="Grid View"
+                  aria-label="Grid view" aria-pressed={viewMode === "grid"}
                   className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                     viewMode === "grid"
                       ? "bg-white text-dark-green shadow-sm font-semibold"
@@ -192,6 +205,7 @@ export default function Events() {
                   type="button"
                   onClick={() => setViewMode("timeline")}
                   title="Timeline View"
+                  aria-label="Timeline view" aria-pressed={viewMode === "timeline"}
                   className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
                     viewMode === "timeline"
                       ? "bg-white text-dark-green shadow-sm font-semibold"
@@ -208,6 +222,7 @@ export default function Events() {
                 <Search className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-stone-400" />
                 <input
                   id="event-search"
+                  aria-label="Search events"
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
@@ -218,6 +233,7 @@ export default function Events() {
                   <button
                     type="button"
                     onClick={() => setSearch("")}
+                    aria-label="Clear search"
                     className="absolute right-2.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-ink"
                   >
                     <X className="h-3 w-3" />
@@ -237,7 +253,7 @@ export default function Events() {
           <Container>
             <div className="mb-3 flex items-center justify-between">
               <p className="text-xs font-semibold uppercase tracking-wider text-stone-400">
-                {spotlightEvents[0].academicYear}
+                {selectedTerm === "all" ? "Across the years" : eventYear(selectedTerm)} / In the spotlight
               </p>
               <span className="text-[11px] font-medium text-stone-400 italic">Featured stories</span>
             </div>
@@ -247,13 +263,16 @@ export default function Events() {
                 <article
                   key={spotlightEvent.id}
                   onClick={() => setActiveModalEvent(spotlightEvent)}
+                    role="button" tabIndex={0} aria-label={`Read ${spotlightEvent.title}`}
+                    onKeyDown={e => { if(e.target === e.currentTarget && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); setActiveModalEvent(spotlightEvent); } }}
                   className="group relative cursor-pointer overflow-hidden rounded-2xl border border-stone-200 bg-dark-green text-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-gold/40"
                 >
-                  <div className="flex h-full flex-col lg:grid lg:grid-cols-12 lg:items-stretch gap-0">
+                  <div className="flex h-full flex-col">
                     {/* Image */}
-                    <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:col-span-7 overflow-hidden bg-black/40">
+                    <div className="relative aspect-[16/9] overflow-hidden bg-black/40">
                       <img
-                        src={spotlightEvent.coverImage}
+                        src={eventPreview(spotlightEvent)}
+                        loading="lazy" decoding="async"
                         alt={spotlightEvent.title}
                         className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
                           spotlightEvent.title === "The Way Forward" ? "object-top" : ""
@@ -265,12 +284,12 @@ export default function Events() {
                     {/* Content */}
                     <div className="flex flex-col justify-between gap-4 p-5 sm:p-6 lg:col-span-5 bg-gradient-to-br from-[#0b3d2e] to-[#07251c] min-h-0">
                       <div>
-                        <div className="flex flex-wrap items-center gap-2 text-xs text-gold-light font-medium">
+                        <div className="flex flex-wrap items-center gap-2 text-xs text-white/70 font-medium">
                           <CalendarDays className="h-3.5 w-3.5" />
                           <span>{spotlightEvent.date}</span>
                           <span>&middot;</span>
                           <MapPin className="h-3.5 w-3.5" />
-                          <span className="truncate">{spotlightEvent.location}</span>
+                          <span className="min-w-0">{spotlightEvent.location}</span>
                         </div>
 
                         <h2 className="mt-3 text-xl font-bold tracking-tight text-white sm:text-2xl leading-snug group-hover:text-gold-light transition-colors">
@@ -278,7 +297,7 @@ export default function Events() {
                         </h2>
 
                         {spotlightEvent.subtitle && (
-                          <p className="mt-2 text-sm font-medium text-teal-light">
+                          <p className="mt-2 text-sm font-medium text-gold-light/90">
                             {spotlightEvent.subtitle}
                           </p>
                         )}
@@ -310,12 +329,18 @@ export default function Events() {
       {/* ================================================================ */}
       <main className="py-12 sm:py-16">
         <Container>
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-stone-200 pb-6">
+            <div><p className="text-[11px] font-semibold uppercase tracking-[.18em] text-teal-dark">The moments that move us</p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-dark-green">{search ? 'Search results' : selectedTerm === 'all' ? 'Explore every chapter.' : `A look back at ${eventYear(selectedTerm)}.`}</h2>
+            </div>
+            <p role="status" className="text-sm text-stone-500">{filteredEvents.length} {filteredEvents.length === 1 ? 'event' : 'events'}{search && ` matching “${search}”`}</p>
+          </div>
           {filteredEvents.length === 0 ? (
             <div className="mx-auto max-w-sm rounded-2xl border border-dashed border-stone-300 bg-white p-10 text-center">
               <Layers className="mx-auto h-8 w-8 text-stone-400" />
               <h3 className="mt-3 text-base font-bold text-ink">No events found</h3>
               <p className="mt-1 text-xs text-stone-500">
-                Try a different keyword or select another academic year.
+                Try a different keyword or select another year.
               </p>
               <button
                 type="button"
@@ -331,17 +356,19 @@ export default function Events() {
           ) : viewMode === "grid" ? (
 
             /* EDITORIAL GRID */
-            <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
               {filteredEvents.map((event) => (
                 <Reveal key={event.id} direction="up">
                   <article
                     onClick={() => setActiveModalEvent(event)}
+                    role="button" tabIndex={0} aria-label={`Read ${event.title}`}
+                    onKeyDown={e => { if(e.target === e.currentTarget && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); setActiveModalEvent(event); } }}
                     className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-white border border-stone-100 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-stone-200"
                   >
                     {/* Photo */}
                     <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
                       <img
-                        src={event.coverImage}
+                        src={eventPreview(event)}
                         alt={event.title}
                         loading="lazy"
                               decoding="async"
@@ -353,7 +380,7 @@ export default function Events() {
 
                       {/* Term badge */}
                       <span className="absolute top-3 right-3 rounded-full bg-black/50 px-2.5 py-0.5 text-[10px] font-medium text-white backdrop-blur-md">
-                        {event.academicYear}
+                        {eventYear(event)}
                       </span>
 
                       {/* Multi-photo indicator */}
@@ -420,7 +447,7 @@ export default function Events() {
               <div className="mb-6 flex items-center gap-3">
                 <div className="h-px flex-1 bg-stone-200" />
                 <span className="text-[11px] font-bold uppercase tracking-widest text-stone-400">
-                  {selectedTerm === "all" ? "All Years" : selectedTerm}
+                  {selectedTerm === "all" ? "All Years" : eventYear(selectedTerm)}
                 </span>
                 <div className="h-px flex-1 bg-stone-200" />
               </div>
@@ -434,6 +461,8 @@ export default function Events() {
                     <Reveal key={event.id} direction="up" delay={0.03 * (idx % 6)}>
                       <div
                         onClick={() => setActiveModalEvent(event)}
+                    role="button" tabIndex={0} aria-label={`Read ${event.title}`}
+                    onKeyDown={e => { if(e.target === e.currentTarget && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); setActiveModalEvent(event); } }}
                         className="group relative flex cursor-pointer items-start gap-5 rounded-xl px-3 py-3.5 transition-all duration-200 hover:bg-stone-50"
                       >
                         {/* Node */}
@@ -461,7 +490,7 @@ export default function Events() {
                           {/* Thumbnail */}
                           <div className="hidden sm:block h-14 w-20 shrink-0 overflow-hidden rounded-lg bg-stone-100">
                             <img
-                              src={event.coverImage}
+                              src={eventPreview(event)}
                               alt={event.title}
                               loading="lazy"
                               decoding="async"

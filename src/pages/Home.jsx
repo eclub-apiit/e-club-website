@@ -14,6 +14,7 @@ import Gallery from "../components/ui/Gallery";
 import TextReveal from "../components/ui/TextReveal";
 import Tooltip from "../components/ui/Tooltip";
 import { cn } from "../lib/cn";
+import { EVENTS, eventPreview } from "../data/events";
 
 const SANDBOX_DEADLINE = new Date("2026-11-30T23:59:59+05:30");
 
@@ -196,44 +197,28 @@ const galleryImages = [
     src: "/events/2024/Her Story 2024.png",
     alt: "Project HerStory 2024: Girls in Power Leadership Dialogue",
   },
-];
+].map(image => {
+  const event = EVENTS.find(event => event.coverImage === image.src);
+  return { ...image, preview: event ? eventPreview(event) : {
+    '/events/2026/Cal Workshop - 2.jpg': '/events/previews/cal-workshop-extra.webp',
+    '/events/2026/Movie Night.png': '/events/previews/movie-night-extra.webp',
+  }[image.src] };
+});
 
-const heroCollage = [
-  {
-    src: "/events/2025/Sandbox 2.0.jpg",
-    alt: "Sandbox 2.0 grand finale crowd",
-    span: "row-span-2",
-  },
-  {
-    src: "/events/2026/Empower Her - 1.jpg",
-    alt: "Empower Her panel discussion",
-    span: "row-span-1",
-  },
-  {
-    src: "/events/2026/Icebreaker.jpg",
-    alt: "Icebreaker community mixer",
-    span: "row-span-1",
-  },
-  {
-    src: "/events/2026/Cal Workshop.jpg",
-    alt: "CAL x Rotaract masterclass",
-    span: "row-span-2",
-  },
-  {
-    src: "/events/2026/AGM 2026-27.jpg",
-    alt: "Annual General Meeting and pinning ceremony",
-    span: "row-span-2",
-  },
-  {
-    src: "/events/2026/Mojito Stall.png",
-    alt: "Mojito Stall fundraiser",
-    span: "row-span-1",
-  },
+// Shared preview URLs keep the repeated collage tiles in the browser cache.
+const heroMoments = [
+  'sandbox-2-0-2025', 'empower-her-2026', 'icebreaker-2026',
+  'cal-workshop-2026', 'agm-2026-2027', 'mojito-stall-2026',
 ];
-
-const heroCollageTiles = [...heroCollage, ...heroCollage];
+const heroTiles = [...heroMoments, ...heroMoments];
 
 export default function Home() {
+  const [heroLoaded, setHeroLoaded] = useState(() => new Set());
+  const heroReady = heroLoaded.size === heroMoments.length;
+  const markHeroLoaded = (id) => setHeroLoaded(previous => {
+    if (previous.has(id)) return previous;
+    return new Set(previous).add(id);
+  });
   const [parallax, setParallax] = useState({ x: 0, y: 0 });
   const [activeVoice, setActiveVoice] = useState(0);
 
@@ -262,26 +247,19 @@ export default function Home() {
       >
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(900px_680px_at_82%_42%,rgba(240,169,58,0.12)_0%,rgba(240,169,58,0)_60%),radial-gradient(900px_680px_at_20%_78%,rgba(14,110,119,0.18)_0%,rgba(14,110,119,0)_60%)]" />
-          <div className="absolute inset-0 grid grid-cols-2 gap-2 p-3 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4 lg:gap-4 lg:p-6 xl:p-8 opacity-80">
-            {heroCollageTiles.map((item, index) => (
-              <div
-                key={`${item.src}-${index}`}
-                className={`relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-black/30 shadow-2xl ${
-                  index < 2 ? "row-span-2" : index % 3 === 0 ? "row-span-2" : "row-span-1"
-                }`}
-              >
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="h-full w-full object-cover object-center brightness-[1.03] contrast-[1.08]"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent" />
-              </div>
-            ))}
+          <div className={`club-hero-collage ${heroReady ? 'is-ready' : ''}`}>
+            {heroTiles.map((id, index) => <div key={`${id}-${index}`} className="club-hero-tile">
+              <img src={`/events/previews/${id}.webp`} alt="" width="960" height="640"
+                loading="eager" fetchPriority={index < 2 ? 'high' : 'auto'} decoding="async"
+                onLoad={async event => {
+                  try { await event.currentTarget.decode(); } catch { /* Retain a loaded image if decoding rejects. */ }
+                  markHeroLoaded(id);
+                }}
+                onError={() => markHeroLoaded(id)}
+              />
+            </div>)}
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#061311]/74 via-[#061311]/52 to-[#061311]/42" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#061311]/80 via-[#061311]/60 to-[#061311]/35" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#061311]/36 via-transparent to-[#061311]/52" />
           <div className="absolute inset-0 bg-noise opacity-10" />
         </div>
@@ -295,7 +273,7 @@ export default function Home() {
         </motion.div>
 
         <Container className="relative z-10 pb-20 pt-28 sm:pb-24 sm:pt-32 lg:pt-24">
-          <div className="max-w-2xl rounded-[2rem] bg-black/6 p-4 backdrop-blur-[1px] sm:bg-black/12 sm:p-8">
+          <div className="max-w-2xl rounded-[2rem] p-4 sm:p-8">
             <TextReveal
               text="Transforming Your Ideas Into Reality"
               className="max-w-[11ch] text-[2.7rem] font-bold leading-[0.95] tracking-tight text-white sm:max-w-none sm:text-6xl lg:text-[5.25rem]"
@@ -551,7 +529,7 @@ export default function Home() {
       </section>
 
       {/* Gallery / Moments */}
-      <section className="relative overflow-hidden bg-[#faf9f6] py-24 sm:py-32">
+      <section id="moments" className="relative overflow-hidden bg-[#faf9f6] py-20 sm:py-24">
         <Container>
           <SectionHeading
             eyebrow="Moments"

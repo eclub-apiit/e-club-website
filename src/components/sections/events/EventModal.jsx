@@ -9,6 +9,8 @@ import {
   MapPin,
 } from "lucide-react";
 
+import { eventYear } from "../../../data/events";
+
 export default function EventModal({ event, onClose }) {
   const [photoIndex, setPhotoIndex] = useState(0);
 
@@ -76,7 +78,7 @@ export default function EventModal({ event, onClose }) {
           <div className="flex items-center justify-between border-b border-stone-100 px-6 py-4 bg-white">
             <div className="flex items-center gap-2">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-stone-500">
-                {event.academicYear} Edition
+                {eventYear(event)} Edition
               </span>
               <span className="text-stone-300">·</span>
               <span className="text-[11px] font-medium text-teal-dark">
@@ -201,6 +203,11 @@ export default function EventModal({ event, onClose }) {
               {/* Story Narrative */}
               <div className="mt-6 text-sm sm:text-base leading-relaxed text-stone-700 space-y-4 font-normal">
                 <p>{event.description}</p>
+                {event.chairs && <p className="mt-4 text-sm text-teal-dark">
+                  Chaired by {event.chairs.map((chair, index) => <span key={chair.name}>
+                    {index > 0 && ' and '}<a href={chair.linkedin} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-4">{chair.name}</a>
+                  </span>)}.
+                </p>}
               </div>
 
               {/* Footer */}

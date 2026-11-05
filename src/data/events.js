@@ -1,23 +1,27 @@
+// Display the archive year without changing historical terms, titles or event records.
+export const eventYear = (eventOrTerm) => String(typeof eventOrTerm === 'string' ? eventOrTerm : eventOrTerm.academicYear).split('-').at(-1);
+export const eventPreview = (event) => `/events/previews/${event.id}.webp`;
+
 export const ACADEMIC_TERMS = [
   {
     id: "2025-2026",
-    label: "2025 - 2026",
-    title: "2025 - 2026 Term",
+    label: "2026",
+    title: "2026 Events",
   },
   {
     id: "2024-2025",
-    label: "2024 - 2025",
-    title: "2024 - 2025 Term",
+    label: "2025",
+    title: "2025 Events",
   },
   {
     id: "2023-2024",
-    label: "2023 - 2024",
-    title: "2023 - 2024 Term",
+    label: "2024",
+    title: "2024 Events",
   },
   {
     id: "2022-2023",
-    label: "2022 - 2023",
-    title: "2022 - 2023 Term",
+    label: "2023",
+    title: "2023 Events",
   },
 ];
 
@@ -39,6 +43,38 @@ export const CATEGORY_TONES = {
 };
 
 export const EVENTS = [
+  {
+    id: "clay-labs-2026",
+    title: "Clay Labs",
+    subtitle: "A Little Clay, A Lot of Nostalgia",
+    academicYear: "2025-2026",
+    category: "Campus Life & Community",
+    featured: true,
+    tag: "Creative Social",
+    date: "October 13, 2026",
+    location: "APIIT",
+    description: "Clay Labs brought students together for an evening of foam-clay art inspired by favourite childhood cartoon characters. With music, food and plenty of creativity, participants made miniature characters, caught up with friends and met new people. Organised by the APIIT Entrepreneurship Club, the session offered a relaxed break from busy routines and a chance to reconnect through creativity and nostalgia.",
+    images: [1, 2, 3, 4].map(index => `/events/2026/clay-labs-${index}.webp`),
+    coverImage: "/events/2026/clay-labs-1.webp",
+  },
+  {
+    id: "the-boardroom-2026",
+    title: "The Boardroom",
+    subtitle: "Business in Crisis. Teamwork in Action.",
+    academicYear: "2025-2026",
+    category: "Workshop & Masterclass",
+    featured: true,
+    tag: "Business Simulation",
+    date: "2026",
+    location: "APIIT",
+    description: "The first edition of The Boardroom brought twenty APIIT students together in three teams for a business-crisis simulation. Taking on C-suite roles, participants tackled unexpected challenges, changing business conditions and surprise role switches, earning points for teamwork, creativity, decision-making and business acumen. Chaired by Nadyah Riyaz and Thahnees Tariq, the evening combined friendly competition with a welcome break from exams and submissions, setting the stage for future editions.",
+    chairs: [
+      { name: "Nadyah Riyaz", linkedin: "https://www.linkedin.com/in/nadyah-riyaz-9384b8290/" },
+      { name: "Thahnees Tariq", linkedin: "https://www.linkedin.com/in/thahnees-tariq-04072124b/" },
+    ],
+    images: ["/events/2026/Boardroom.jpeg", "/events/2026/Boardroom - 2.jpeg"],
+    coverImage: "/events/2026/Boardroom.jpeg",
+  },
   // =========================================================================
   // 2025 - 2026 ACADEMIC TERM
   // =========================================================================

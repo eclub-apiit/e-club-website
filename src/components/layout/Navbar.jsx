@@ -43,7 +43,7 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-90 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-        solid ? "bg-white/85 shadow-[0_4px_24px_rgba(11,61,46,0.08)] backdrop-blur-xl" : "bg-transparent"
+        open ? "bg-[#06271f] shadow-xl" : solid ? "bg-white/85 shadow-[0_4px_24px_rgba(11,61,46,0.08)] backdrop-blur-xl" : "bg-transparent"
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
@@ -64,7 +64,7 @@ export default function Navbar() {
                 cn(
                   "relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300",
                   solid ? "text-ink-soft hover:text-dark-green" : "text-white/85 hover:text-white",
-                  isActive && (solid ? "text-dark-green" : "text-white")
+                  isActive && (open ? "text-white" : solid ? "text-dark-green" : "text-white")
                 )
               }
             >
@@ -95,10 +95,11 @@ export default function Navbar() {
         <button
           type="button"
           aria-label="Toggle menu"
+          aria-expanded={open} aria-controls="club-mobile-menu"
           onClick={() => setOpen((o) => !o)}
           className={cn(
             "flex h-10 w-10 items-center justify-center rounded-full xl:hidden",
-            solid ? "text-dark-green" : "text-white"
+            open ? "text-white" : solid ? "text-dark-green" : "text-white"
           )}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -112,7 +113,8 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-black/5 bg-white/95 backdrop-blur-xl xl:hidden"
+            id="club-mobile-menu"
+            className="max-h-[calc(100dvh-72px)] overflow-y-auto overscroll-contain border-t border-white/10 bg-[#06271f] text-white xl:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-6">
               {LINKS.map((link, i) => (
@@ -128,7 +130,7 @@ export default function Navbar() {
                     className={({ isActive }) =>
                       cn(
                         "block rounded-xl px-4 py-3 text-base font-medium transition-colors",
-                        isActive ? "bg-teal/10 text-dark-green" : "text-ink-soft hover:bg-cream hover:text-dark-green"
+                        isActive ? "bg-white/10 text-gold-light" : "text-white/80 hover:bg-white/5 hover:text-white"
                       )
                     }
                   >
@@ -145,7 +147,7 @@ export default function Navbar() {
               >
                 Sandbox
               </Button>
-              <NavLink to="/convergence-summit-2026/" onClick={() => setOpen(false)} className="mt-2 flex w-full items-center justify-center gap-3 rounded-full border border-teal/40 bg-teal/5 px-4 py-3 text-sm font-semibold text-dark-green hover:bg-teal/10">
+              <NavLink to="/convergence-summit-2026/" onClick={() => setOpen(false)} className="mt-2 flex w-full items-center justify-center gap-3 rounded-full border border-[#77d9c2]/50 bg-[#77d9c2]/5 px-4 py-3 text-sm font-semibold text-[#a5eed9] hover:bg-[#77d9c2]/15">
                 Convergence Summit <ArrowUpRight className="h-4 w-4" aria-hidden="true"/>
               </NavLink>
             </div>

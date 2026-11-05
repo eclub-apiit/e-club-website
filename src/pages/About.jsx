@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import { Phone, ArrowUpRight } from "lucide-react";
 import { Linkedin } from "../components/ui/SocialIcons";
 import Container from "../components/ui/Container";
 import Reveal, { RevealGroup, RevealItem } from "../components/ui/Reveal";
 import SectionHeading from "../components/ui/SectionHeading";
 import GradientBlob from "../components/ui/GradientBlob";
 import TextReveal from "../components/ui/TextReveal";
-import SignatureMotif from "../components/ui/SignatureMotif";
+import { Link } from "react-router-dom";
 
 const COMMITTEE_WATERMARKS = [
   { top: "6%", left: "3%", size: 44, rotate: -12 },
@@ -44,10 +45,10 @@ const objectives = [
 ];
 
 const executives = [
-  { name: "Sudeesha Fonseka", role: "President", img: "/committee/web/president.jpg", linkedin: "https://www.linkedin.com/in/sudeeshafonseka/" },
+  { name: "Sudeesha Fonseka", role: "President", img: "/committee/web/president.jpg", linkedin: "https://www.linkedin.com/in/sudeeshafonseka/", phone: "+94 77 863 1836" },
   { name: "Keith Moraes", role: "Vice President", img: "/committee/web/vice-1.jpg", linkedin: "https://www.linkedin.com/in/keith-moraes-6ba169256/" },
   { name: "Raqeeb Ameen", role: "Vice President", img: "/committee/web/vice-2.jpg", linkedin: "https://www.linkedin.com/in/rockeebb/" },
-  { name: "Tihara Peiris", role: "Secretary", img: "/committee/web/sec-1.jpg", linkedin: "https://www.linkedin.com/in/tihara-peris-4643872b7/" },
+  { name: "Tihara Peiris", role: "Secretary", img: "/committee/web/sec-1.jpg", linkedin: "https://www.linkedin.com/in/tihara-peris-4643872b7/", phone: "+94 76 134 9956" },
   { name: "Thahnees Thariq", role: "Assistant Secretary", img: "/committee/web/sec-2.jpg", linkedin: "https://www.linkedin.com/in/thahnees-tariq-04072124b/" },
   { name: "Himansa Indusara", role: "Treasurer", img: "/committee/web/treasurer.jpg", linkedin: "https://www.linkedin.com/in/himansa-indusara-b36310357/" },
 ];
@@ -83,105 +84,68 @@ const departments = [
   },
   {
     name: "IT",
-    members: [{ name: "Brittni Fernando", img: "/committee/web/it.jpg", linkedin: "https://www.linkedin.com/in/brittni-fernando/" }],
+    members: [
+      { name: "Brittni Fernando", img: "/committee/web/it.jpg", linkedin: "https://www.linkedin.com/in/brittni-fernando/" },
+      { name: "Radhesh Zureshkumar", img: "/committee/web/it-2.webp", linkedin: "https://www.linkedin.com/in/radhesh-zureshkumarmar-895470301/" },
+    ],
   },
 ];
 
 export default function About() {
   return (
     <>
-      <section className="relative overflow-hidden pb-24 pt-32 sm:pb-32 sm:pt-40">
-        <GradientBlob tone="teal" size={480} className="-top-32 -left-32" />
-        <GradientBlob tone="gold" size={360} className="-bottom-20 -right-20" />
-        <SignatureMotif
-          tone="dark"
-          className="pointer-events-none absolute right-0 top-16 hidden h-auto w-[440px] max-w-none opacity-50 lg:block"
-        />
-        <Container className="relative">
-          <Reveal direction="up">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-9 bg-gold-dark" aria-hidden="true" />
-              <span className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-dark">About Us</span>
+      <section className="relative overflow-hidden bg-[#f4f2e9] pb-16 pt-28 sm:pb-24 sm:pt-36">
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[.24em] text-teal-dark">About APIIT E-Club</p>
+              <TextReveal as="h1" text="A place to start. A community to grow." delay={0.05}
+                className="mt-6 max-w-xl text-4xl font-semibold leading-[1.08] tracking-tight text-dark-green sm:text-5xl lg:text-6xl"/>
+              <Reveal direction="up" delay={0.12}>
+                <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
+                  We’re APIIT students with the curiosity to try, the ambition to build, and the belief that ideas grow stronger when we work together.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-6 text-sm font-semibold text-dark-green">
+                  <Link to="/events" className="inline-flex items-center gap-2 border-b border-teal/40 pb-2 hover:text-teal">See what we do <ArrowUpRight className="h-4 w-4"/></Link>
+                  <a href="#committee" className="inline-flex items-center gap-2 border-b border-teal/40 pb-2 hover:text-teal">Meet the people <ArrowUpRight className="h-4 w-4"/></a>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
-          <TextReveal
-            as="h1"
-            text="Who are we?"
-            delay={0.08}
-            className="mt-6 max-w-3xl text-5xl font-semibold tracking-tight text-ink sm:text-6xl"
-          />
-          <Reveal direction="up" delay={0.18}>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-              A community of motivated APIIT students with an entrepreneurial spirit, building the founders of
-              tomorrow.
-            </p>
-          </Reveal>
+            <Reveal direction="up" delay={0.15} className="relative">
+              <div className="absolute -bottom-3 -right-3 h-2/3 w-2/3 rounded-3xl bg-gold/50" aria-hidden="true"/>
+              <figure className="relative overflow-hidden rounded-3xl bg-dark-green">
+                <img src="/events/previews/empower-her-2026.webp" width="960" height="640" fetchPriority="high"
+                  alt="APIIT E-Club members and participants together at Empower Her" className="aspect-[4/3] w-full object-cover"/>
+                <figcaption className="flex items-center justify-between gap-4 px-6 py-5 text-white">
+                  <span className="text-sm font-medium">Different ideas. Shared ambition.</span><span className="text-xs text-gold-light">APIIT E-Club</span>
+                </figcaption>
+              </figure>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-24 sm:py-32">
-        <img
-          src="/eclub-icon.png"
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-16 top-1/2 hidden w-[420px] -translate-y-1/2 opacity-[0.06] lg:block"
-        />
-        <Container className="relative">
-          <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:gap-16">
-            <Reveal direction="up">
-              <div className="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-6">
-                <span className="h-px w-9 bg-gold-dark lg:h-24 lg:w-px" aria-hidden="true" />
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-dark">Our Mission</p>
-              </div>
-            </Reveal>
-            <div className="max-w-3xl">
-              <Reveal direction="up" delay={0.05}>
-                <p className="text-2xl font-medium leading-snug text-ink sm:text-3xl">
-                  A club, with a motivated group of individuals with entrepreneurial spirit, that aims to cultivate
-                  citizens who will create start-ups that will help grow our economy.
-                </p>
-              </Reveal>
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                <Reveal direction="up" delay={0.12}>
-                  <p className="leading-relaxed text-ink-soft">
-                    To foster entrepreneurial skills in the student body and help them understand the importance of
-                    building enterprises and businesses that grow societies and nations.
-                  </p>
-                </Reveal>
-                <Reveal direction="up" delay={0.18}>
-                  <p className="leading-relaxed text-ink-soft">
-                    The club also serves as a platform for budding entrepreneurs to showcase their talents and ideas,
-                    while following the guidelines set by the college.
-                  </p>
-                </Reveal>
+      <section className="bg-white py-16 sm:py-24" aria-labelledby="mission-heading">
+        <Container>
+          <div className="grid gap-8 border-t border-dark-green/15 pt-8 lg:grid-cols-[1fr_2fr] lg:gap-16">
+            <p className="text-xs font-semibold uppercase tracking-[.24em] text-teal-dark">Our Mission</p>
+            <div>
+              <h2 id="mission-heading" className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-dark-green sm:text-4xl">
+                Give entrepreneurial spirit somewhere to go.
+              </h2>
+              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-soft">
+                We help students develop the skills, confidence and business insight to build enterprises that contribute to society and grow our economy.
+              </p>
+              <div className="mt-8 grid gap-8 sm:grid-cols-2">
+                <div className="border-l-2 border-gold pl-5"><h3 className="font-semibold text-dark-green">Learn by getting involved.</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">Workshops, mentorship and hands-on experiences connect classroom learning with the realities of starting and growing a business.</p>
+                </div>
+                <div className="border-l-2 border-teal/40 pl-5"><h3 className="font-semibold text-dark-green">Make room for your ideas.</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">We give budding entrepreneurs a platform to share their talents, explore opportunities and build together, within the guidelines of APIIT.</p>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Visual Community Showcase Photo */}
-          <Reveal direction="up" delay={0.2} className="mt-16">
-            <div className="relative overflow-hidden rounded-3xl border border-black/10 shadow-xl">
-              <img
-                src="/events/2026/Icebreaker.jpg"
-                alt="APIIT Entrepreneurship Club community members and participants"
-                className="h-[340px] w-full object-cover object-center sm:h-[420px] lg:aspect-[21/9] lg:h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-green/78 via-transparent to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-4 text-white sm:flex-row sm:items-end sm:justify-between sm:p-8">
-                <div className="max-w-xl">
-                  <span className="rounded-full bg-gold/90 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-dark-green">
-                    Student Community
-                  </span>
-                  <h3 className="mt-2 text-xl font-bold sm:text-2xl">
-                    Driven by Passion, Built on Collaboration
-                  </h3>
-                </div>
-                <span className="text-xs text-white/80 font-medium sm:text-right">
-                  2025 - 2026 E-Club Community Sessions
-                </span>
-              </div>
-            </div>
-          </Reveal>
         </Container>
       </section>
 
@@ -246,7 +210,7 @@ export default function About() {
         </Container>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-24 sm:py-32">
+      <section id="committee" className="relative scroll-mt-24 overflow-hidden bg-white py-24 sm:py-32">
         {COMMITTEE_WATERMARKS.map((w, i) => (
           <img
             key={i}
@@ -274,6 +238,9 @@ export default function About() {
             />
             <h3 className="mt-6 text-2xl font-semibold text-ink">{executives[0].name}</h3>
             <p className="mt-1 font-medium text-teal-dark">{executives[0].role}</p>
+            <a href={`tel:${executives[0].phone.replace(/\s/g, '')}`} className="mt-3 inline-flex items-center gap-2 text-sm text-teal-dark hover:underline">
+              <Phone className="h-3.5 w-3.5" aria-hidden="true"/>{executives[0].phone}
+            </a>
             {executives[0].linkedin && (
               <a
                 href={executives[0].linkedin}
@@ -303,6 +270,9 @@ export default function About() {
                   />
                   <h3 className="mt-4 text-base font-semibold text-ink">{member.name}</h3>
                   <p className="mt-1 text-sm font-medium text-teal-dark">{member.role}</p>
+                  {member.phone && <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="mt-2 inline-flex items-center gap-1.5 text-xs text-teal-dark hover:underline">
+                    <Phone className="h-3 w-3 shrink-0" aria-hidden="true"/>{member.phone}
+                  </a>}
                   {member.linkedin && (
                     <a
                       href={member.linkedin}

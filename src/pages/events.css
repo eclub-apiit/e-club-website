@@ -1,0 +1,9 @@
+.club-events .events-introduction{max-width:780px}
+.club-events header h1{font-size:clamp(2.8rem,5.5vw,5.5rem);line-height:1.02;letter-spacing:-.055em}
+.club-events [role=button]:focus-visible,.club-events button:focus-visible{outline:3px solid #db9e35;outline-offset:4px}
+.club-events .events-controls button{min-height:38px}
+.club-events .events-controls input{min-height:40px}
+@media(max-width:639px){
+ .club-events .events-controls{position:relative;top:auto}
+ .club-events .events-controls>div>div{gap:16px}
+}

@@ -10,6 +10,8 @@ const chapters=[
   {name:'Magazine Launch',point:.64}, {name:'The boardroom',point:.81}, {name:'Your invitation',point:.96},
 ];
 const boundaries=[0,.18,.35,.56,.735,.89];
+// A short, scaled desktop window needs a flowing story rather than a clipped pinned viewport.
+const flowingStoryQuery='(prefers-reduced-motion: reduce), (min-width:760px) and (max-height:560px)';
 function BrandMarks(){
   return <div className="si-brand-marks" aria-label="E-Club, APIIT and Global Entrepreneurship Week">
     <div className="si-brand si-brand-eclub"><img src={summit.assets.eclub} width="782" height="224" alt="Entrepreneurship Club of APIIT"/></div>
@@ -25,8 +27,8 @@ function RoomFallback(){return <svg className="si-fallback" viewBox="0 0 900 650
 function Journey({onArrivalExit}){
   const section=useRef(null),canvas=useRef(null),engine=useRef(null),progressBar=useRef(null),micAnnotations=useRef(null);
   const [active,setActive]=useState(0),[ready,setReady]=useState(false),[failed,setFailed]=useState(false),[bookOpen,setBookOpen]=useState(false);
-  const [reduced,setReduced]=useState(()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  useEffect(()=>{const m=matchMedia('(prefers-reduced-motion: reduce)');const change=()=>setReduced(m.matches);m.addEventListener('change',change);return()=>m.removeEventListener('change',change);},[]);
+  const [reduced,setReduced]=useState(()=>window.matchMedia(flowingStoryQuery).matches);
+  useEffect(()=>{const m=matchMedia(flowingStoryQuery);const change=()=>setReduced(m.matches);m.addEventListener('change',change);return()=>m.removeEventListener('change',change);},[]);
   useEffect(()=>{
     let cancelled=false,raf=0;const element=section.current;setReady(false);
     function update(){raf=0;if(!element.isConnected)return;const rect=element.getBoundingClientRect();const flowing=reduced||element.classList.contains('si-no-webgl');const p=flowing?0:Math.max(0,Math.min(1,-rect.top/(element.offsetHeight-innerHeight)));engine.current?.update(p);let next=0;boundaries.forEach((b,i)=>{if(p>=b)next=i;});setActive(next);onArrivalExit(flowing?(element.querySelector('.si-intro')?.getBoundingClientRect().bottom??Infinity)<110:next>0);if(progressBar.current)progressBar.current.style.transform=`scaleX(${p})`;}
@@ -49,10 +51,9 @@ function Journey({onArrivalExit}){
         <div data-mic-callout="connection" role="listitem"><span>03 / Connector</span><h3>A connection.</h3><p>A conversation to carry beyond the room.</p></div>
       </div>
       <div className="si-scene-shade"/>
-      <div className={`si-identity-strip ${active===0||staticMode?'is-visible':''}`}><BrandMarks/></div>
       <div className="si-story-content">
         <article {...visible(0)}>
-          
+          <div className="si-hero-partners"><BrandMarks/></div>
           <img className="si-hero-wordmark" src={summit.assets.logo} alt="The Convergence Summit 2026" width="1817" height="448"/>
           <h1>Where Ideas<br/><em>Inspire Action.</em></h1>
           <p className="si-lede">One room. Different perspectives.<br/>A shared ambition to create what comes next.</p>

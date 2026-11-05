@@ -2,7 +2,7 @@ import { CalendarDays, MapPin, Images, ArrowUpRight } from "lucide-react";
 import Card from "../../ui/Card";
 import Badge from "../../ui/Badge";
 import Button from "../../ui/Button";
-import { CATEGORY_TONES } from "../../../data/events";
+import { CATEGORY_TONES, eventYear } from "../../../data/events";
 
 export default function EventCard({ event, onSelect }) {
   const isPast = event.status === "past";
@@ -32,7 +32,7 @@ export default function EventCard({ event, onSelect }) {
           <Badge tone={CATEGORY_TONES[event.category] || "teal"}>{event.category}</Badge>
           {event.academicYear && (
             <span className="rounded-full border border-white/20 bg-black/40 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
-              {event.academicYear}
+              {eventYear(event)}
             </span>
           )}
         </div>

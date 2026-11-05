@@ -1,7 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { ScrollProgressBar } from "./components/ui/ProgressIndicator";
 import { ToastProvider } from "./components/ui/Toast";
-import CursorGlow from "./components/ui/CursorGlow";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -26,7 +25,6 @@ export default function ClubRoutes() {
   return (
     <ToastProvider>
       {!isSandbox && <ScrollProgressBar />}
-      <CursorGlow />
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
