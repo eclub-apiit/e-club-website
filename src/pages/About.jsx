@@ -62,10 +62,10 @@ const departments = [
     ],
   },
   {
-    name: "Marketing",
+    name: "IT",
     members: [
-      { name: "Ayodya Perera", img: "/committee/web/marketing-1.jpg", linkedin: "https://www.linkedin.com/in/ayodya-perera-2b4527339/" },
-      { name: "Sanduni Wanasinghe", img: "/committee/web/marketing-2.jpg", linkedin: "https://www.linkedin.com/in/sanduniw/" },
+      { name: "Brittni Fernando", img: "/committee/web/it.jpg", linkedin: "https://www.linkedin.com/in/brittni-fernando/" },
+      { name: "Radhesh Zureshkumar", img: "/committee/web/it-2.webp", linkedin: "https://www.linkedin.com/in/radhesh-zureshkumarmar-895470301/" },
     ],
   },
   {
@@ -83,10 +83,10 @@ const departments = [
     ],
   },
   {
-    name: "IT",
+    name: "Marketing",
     members: [
-      { name: "Brittni Fernando", img: "/committee/web/it.jpg", linkedin: "https://www.linkedin.com/in/brittni-fernando/" },
-      { name: "Radhesh Zureshkumar", img: "/committee/web/it-2.webp", linkedin: "https://www.linkedin.com/in/radhesh-zureshkumarmar-895470301/" },
+      { name: "Ayodya Perera", img: "/committee/web/marketing-1.jpg", linkedin: "https://www.linkedin.com/in/ayodya-perera-2b4527339/" },
+      { name: "Sanduni Wanasinghe", img: "/committee/web/marketing-2.jpg", linkedin: "https://www.linkedin.com/in/sanduniw/" },
     ],
   },
 ];
