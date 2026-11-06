@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useMemo, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "../../lib/cn";
@@ -12,6 +12,7 @@ const variantClasses = {
     "bg-transparent text-white border border-white/40 backdrop-blur-sm hover:bg-white hover:text-dark-green",
   outline:
     "bg-transparent text-dark-green border border-dark-green/25 hover:border-dark-green hover:bg-dark-green hover:text-white",
+  convergence: "bg-[#77d9c2] text-[#06271f] shadow-[0_8px_28px_-8px_#77d9c260] hover:bg-[#b3f4e1] hover:text-[#06271f]",
   teal: "bg-teal text-white shadow-[0_10px_30px_-8px_rgba(21,123,116,0.55)] hover:bg-dark-green",
   ghost: "bg-transparent text-teal-dark hover:text-dark-green",
   sandbox:
@@ -66,7 +67,7 @@ const Button = forwardRef(function Button(
     magnetY.set(0);
   };
 
-  const MotionComp = motion.create ? motion.create(Comp) : motion(Comp);
+  const MotionComp = useMemo(() => motion.create ? motion.create(Comp) : motion(Comp), [Comp]);
 
   return (
     <MotionComp

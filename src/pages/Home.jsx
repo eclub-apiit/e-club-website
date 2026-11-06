@@ -10,13 +10,16 @@ import GradientBlob from "../components/ui/GradientBlob";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import TiltCard from "../components/ui/TiltCard";
+import useConvergencePromotion from "../hooks/useConvergencePromotion";
 import Gallery from "../components/ui/Gallery";
 import TextReveal from "../components/ui/TextReveal";
 import Tooltip from "../components/ui/Tooltip";
 import { cn } from "../lib/cn";
 import { EVENTS, eventPreview } from "../data/events";
+import { summit, summitDate, getRegistrationUrl } from "../features/summit/event";
+import { sandbox } from "../data/registrations";
 
-const SANDBOX_DEADLINE = new Date("2026-11-30T23:59:59+05:30");
+const SANDBOX_DEADLINE = new Date(sandbox.deadline);
 
 function SandboxCountdown() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -45,12 +48,12 @@ function SandboxCountdown() {
   ];
 
   return (
-    <div className="mt-8 flex items-start gap-4">
+    <div className="mt-6 flex items-start gap-2 sm:gap-4">
       {units.map((unit, i) => (
-        <div key={unit.label} className="flex items-start gap-4">
-          {i > 0 && <span className="font-coolvetica text-3xl leading-none text-slate-500">:</span>}
+        <div key={unit.label} className="flex items-start gap-2 sm:gap-4">
+          {i > 0 && <span className="font-coolvetica text-2xl leading-none sm:text-3xl text-slate-500">:</span>}
           <div className="flex flex-col items-center">
-            <span className="font-coolvetica text-3xl leading-none text-white tabular-nums">
+            <span className="font-coolvetica text-2xl leading-none sm:text-3xl text-white tabular-nums">
               {String(unit.value).padStart(2, "0")}
             </span>
             <span className="mt-2 text-[10px] uppercase tracking-widest text-slate-400">{unit.label}</span>
@@ -213,6 +216,7 @@ const heroMoments = [
 const heroTiles = [...heroMoments, ...heroMoments];
 
 export default function Home() {
+  const showConvergence = useConvergencePromotion();
   const [heroLoaded, setHeroLoaded] = useState(() => new Set());
   const heroReady = heroLoaded.size === heroMoments.length;
   const markHeroLoaded = (id) => setHeroLoaded(previous => {
@@ -288,8 +292,8 @@ export default function Home() {
             </Reveal>
             <Reveal direction="up" delay={0.3}>
               <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4">
-                <Button as={Link} to="/events" variant="primary" size="lg">
-                  Explore Events
+                <Button as="a" href="#registrations" variant="primary" size="lg">
+                  Register for an event
                 </Button>
                 <Button as={Link} to="/about" variant="secondary" size="lg">
                   About Us
@@ -310,6 +314,40 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      {showConvergence && <section id="registrations" aria-labelledby="registrations-heading" className="scroll-mt-24 bg-[#f4f2e9] py-16 sm:py-24">
+        <Container>
+          <p className="text-xs font-semibold uppercase tracking-[.22em] text-teal-dark">What’s coming up at E-Club</p>
+          <h2 id="registrations-heading" className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-dark-green sm:text-4xl">Register for your next experience.</h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">Two separate events, each with its own audience, experience and registration form.</p>
+          <div className="mt-9 grid gap-6 lg:grid-cols-2">
+            <article data-registration-event="convergence" aria-labelledby="convergence-card-heading" className="club-event-promotion flex min-w-0 flex-col rounded-3xl border border-[#77d9c2]/25 bg-[#061c21] p-6 text-white sm:p-9">
+              <p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[#91e6d2]">Entrepreneurship summit · University communities &amp; industry</p>
+              <img src={summit.assets.logo} alt="The Convergence Summit 2026" width="1817" height="448" loading="lazy" className="mt-7 h-16 w-auto max-w-full self-start object-contain object-left"/>
+              <h3 id="convergence-card-heading" className="mt-6 text-2xl font-semibold tracking-tight">The Convergence Summit 2026</h3>
+              <p className="mt-2 text-[#91e6d2]">Where Ideas Inspire Action.</p>
+              <p className="mt-4 text-sm leading-relaxed text-white/75">Join APIIT E-Club for a day of entrepreneurial perspectives, conversations and decisions. Experience the industry panel and Q&amp;A, Innovator’s Digest Volume 4 launch, networking and The Boardroom business simulation.</p>
+              <div className="my-6 border-y border-white/15 py-4 text-sm leading-relaxed"><p className="font-semibold text-white">{summitDate.full} · 9:30 am onwards</p><p className="mt-1 text-white/70">{summit.venue}, Colombo</p></div>
+              <div className="mt-auto flex flex-wrap items-center gap-5">
+                {getRegistrationUrl() && <Button as="a" href={getRegistrationUrl()} target="_blank" rel="noopener noreferrer" variant="convergence" magnetic={false}>Register for Convergence</Button>}
+                <Link to={summit.route} className="border-b border-[#77d9c2]/50 py-2 text-sm font-semibold text-[#a5eed9] hover:text-white">Explore the summit →</Link>
+              </div>
+            </article>
+            <article data-registration-event="sandbox" aria-labelledby="sandbox-card-heading" className="club-event-promotion flex min-w-0 flex-col rounded-3xl border border-purple-400/25 bg-[#28162f] p-6 text-white sm:p-9">
+              <p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[#e3b8f4]">Inter-school business pitching · School teams</p>
+              <img src="/sandbox/assets/sandbox-logo-cropped.png" alt="Sandbox" width="900" height="300" loading="lazy" className="mt-7 h-16 w-auto max-w-full self-start object-contain object-left"/>
+              <h3 id="sandbox-card-heading" className="mt-6 text-2xl font-semibold tracking-tight">Sandbox 3.0</h3>
+              <p className="mt-2 text-[#e3b8f4]">Where Ideas Take Flight.</p>
+              <p className="mt-4 text-sm leading-relaxed text-white/75">APIIT E-Club’s national inter-school business pitching competition. Bring your school team, develop your business idea and explore entrepreneurship through a competition created for school students.</p>
+              <div className="my-6 border-y border-white/15 py-4"><p className="text-sm font-semibold">Applications close 30 November 2026</p><SandboxCountdown/></div>
+              <div className="mt-auto flex flex-wrap items-center gap-5">
+                <Button as="a" href={sandbox.registrationUrl} target="_blank" rel="noopener noreferrer" variant="sandbox" magnetic={false}>Register for Sandbox</Button>
+                <Link to={sandbox.route} className="border-b border-purple-300/50 py-2 text-sm font-semibold text-[#e3b8f4] hover:text-white">Explore Sandbox →</Link>
+              </div>
+            </article>
+          </div>
+        </Container>
+      </section>}
 
       {/* Value Proposition */}
       <section className="relative overflow-hidden bg-bg py-24 sm:py-32">
@@ -404,8 +442,8 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Featured: Sandbox */}
-      <section
+      {/* After the summit, restore the original standalone Sandbox feature. */}
+      {!showConvergence && <section id="registrations" data-standalone-sandbox
         className="relative overflow-hidden py-24 sm:py-32"
         style={{
           background:
@@ -419,6 +457,7 @@ export default function Home() {
                 <img
                   src="/sandbox/assets/home-hero.jpg"
                   alt="Champions celebrating on stage at the Sandbox grand final"
+                  loading="lazy" decoding="async"
                   className="aspect-[4/3] w-full rounded-2xl object-cover"
                 />
               </Card>
@@ -457,17 +496,17 @@ export default function Home() {
 
             <Reveal direction="up" delay={0.34}>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Button as={Link} to="/sandbox" variant="sandbox" size="lg">
-                  Explore Sandbox
+                <Button as="a" href={sandbox.registrationUrl} target="_blank" rel="noopener noreferrer" variant="sandbox" size="lg">
+                  Register for Sandbox
                 </Button>
-                <Button as={Link} to="/events" variant="secondary" size="lg">
-                  Browse Other Events
+                <Button as={Link} to={sandbox.route} variant="secondary" size="lg">
+                  Explore Sandbox
                 </Button>
               </div>
             </Reveal>
           </div>
         </Container>
-      </section>
+      </section>}
 
       {/* Success Stories */}
       <section className="relative overflow-hidden bg-white py-24 sm:py-32">

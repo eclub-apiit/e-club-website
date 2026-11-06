@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import PageSeo from "./seo/PageSeo";
 import ScrollToTop from "./components/layout/ScrollToTop";
 
 // Direct summit visits only load the event experience, not the club and Sandbox pages.
@@ -10,6 +11,7 @@ export default function App() {
   const { pathname, search, hash } = useLocation();
   const isSummit = pathname.startsWith("/convergence-summit-2026");
   return <>
+    <PageSeo />
     <ScrollToTop />
     <Suspense fallback={<div role="status" style={{ minHeight: "100svh", background: isSummit ? "#061719" : "#fafaf8", color: isSummit ? "#a7eccd" : "#0b3d2e", display: "grid", placeItems: "center", fontFamily: "sans-serif" }}>{isSummit ? "Entering Convergence…" : "Loading E-Club…"}</div>}>
       <Routes>

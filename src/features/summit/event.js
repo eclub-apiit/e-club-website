@@ -13,7 +13,7 @@ export const summit = {
   venue: "University of Staffordshire Building (APIIT)",
   venueDetails: { name: "University of Staffordshire in collaboration with APIIT", address: "85 Braybrooke Place, Colombo 00200, Sri Lanka", mapsUrl: "https://www.google.com/maps?ftid=0x3ae2590054cd6db5%3A0xf7050eed8ee76b9e" },
   panel: { startTime: "10:30", endTime: "12:00", includesQA: true },
-  registrationUrl: import.meta.env.VITE_SUMMIT_REGISTRATION_URL || "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=7YWlTTjWHE6_NwK3MWfhtDvJY25WNy9Lt3ujJyzCjfBUMkszWDQyUE80Q0NPWFpDVzBRNkNGNkY1Ty4u",
+  registrationUrl: import.meta.env?.VITE_SUMMIT_REGISTRATION_URL || "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=7YWlTTjWHE6_NwK3MWfhtDvJY25WNy9Lt3ujJyzCjfBUMkszWDQyUE80Q0NPWFpDVzBRNkNGNkY1Ty4u",
   assets: {
     logo: "/summit/summit-wordmark.webp",
     eclub: "/eclub-logo-trimmed.png",
