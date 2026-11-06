@@ -1,6 +1,6 @@
 // Display the archive year without changing historical terms, titles or event records.
 export const eventYear = (eventOrTerm) => String(typeof eventOrTerm === 'string' ? eventOrTerm : eventOrTerm.academicYear).split('-').at(-1);
-export const eventPreview = (event) => `/events/previews/${event.id}.webp`;
+export const eventPreview = (event) => event.previewImage || `/events/previews/${event.id}.webp`;
 
 export const ACADEMIC_TERMS = [
   {
@@ -43,6 +43,26 @@ export const CATEGORY_TONES = {
 };
 
 export const EVENTS = [
+  {
+    id: "general-member-orientation-2026",
+    title: "General Member Orientation",
+    subtitle: "Fresh Connections & New Beginnings",
+    academicYear: "2025-2026",
+    category: "Campus Life & Community",
+    featured: true,
+    tag: "General Members",
+    date: "November 5, 2026",
+    location: "APIIT City Campus",
+    description:
+      "A day filled with new faces, fresh connections and exciting beginnings. The General Member Orientation welcomed students who will volunteer at upcoming E-Club events through icebreaker sessions and interactive activities designed to help everyone get to know one another, mingle and build the connections that make collaboration easier. Welcome to the E-Club family!",
+    images: [
+      "/events/2026/General Member Orientation - 1.jpeg",
+      "/events/2026/General Member Orientation - 2.jpeg",
+      "/events/2026/General Member Orientation - 3.jpeg",
+    ],
+    previewImage: "/events/2026/General Member Orientation - 1.jpeg",
+    coverImage: "/events/2026/General Member Orientation - 1.jpeg",
+  },
   {
     id: "clay-labs-2026",
     title: "Clay Labs",
