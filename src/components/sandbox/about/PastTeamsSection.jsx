@@ -14,7 +14,7 @@ function PastMemberCard({ member }) {
         <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#17171d] to-transparent" />
       </div>
       <div className="px-4 pb-4 pt-1">
-        <p className="font-['Space_Grotesk'] text-sm font-medium text-white md:text-base">{name}</p>
+        <p className="font-display text-sm font-medium text-white md:text-base">{name}</p>
         <p className="text-xs text-white/55 md:text-sm">{role}</p>
         {linkedin ? (
           <a
@@ -42,7 +42,7 @@ export default function PastTeamsSection({ teams = PAST_TEAMS, hideHeader = fals
       {!hideHeader && (
         <header className="mb-10 text-center">
           <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[#14f2db]">Past editions</p>
-          <h2 className="font-['Space_Grotesk'] text-3xl font-medium text-white md:text-4xl">
+          <h2 className="font-display text-3xl font-medium text-white md:text-4xl">
             Meet the teams
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/55">
@@ -56,7 +56,7 @@ export default function PastTeamsSection({ teams = PAST_TEAMS, hideHeader = fals
           <div key={edition}>
             {!hideHeader ? (
               <div className="mb-5 flex items-baseline gap-3">
-                <h3 className="font-['Space_Grotesk'] text-xl font-medium text-white">{edition}</h3>
+                <h3 className="font-display text-xl font-medium text-white">{edition}</h3>
                 <span className="rounded-full border border-[#7C3AED]/40 bg-[#7C3AED]/10 px-2.5 py-0.5 text-xs text-[#c4b5fd]">
                   {year}
                 </span>

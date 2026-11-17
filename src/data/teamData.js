@@ -30,6 +30,7 @@ export const TEAM = [
   // linkedin: distinctive name match, but headline says Edith Cowan University -
   // confirm with Yunus directly before shipping:
   { name: 'Yunus Nuhman', role: 'Head of IT', category: 'it', image: '/sandbox/assets/Yunus-Nuhman.webp', linkedin: 'https://www.linkedin.com/in/yunusnuhman/', education: 'BSc (Hons) Cyber Security and Networking' },
+  { name: 'Hana Careem', role: 'Head of IT', category: 'it', image: '/sandbox/assets/Hana-Careem.webp', linkedin: 'https://www.linkedin.com/in/hana-careem-4304b2349', education: 'BSc (Hons) Computer Science', objectPosition: '50% 0%' },
   // --- Heads ---
   { name: 'Nadyah Riyaz', role: 'Head of Media', category: 'media', image: '/sandbox/assets/Nadyah.webp', linkedin: 'https://www.linkedin.com/in/nadyah-riyaz-9384b8290', education: 'BSc (Hons) Business Management (Digital Marketing)', objectPosition: '50% 0%' },
   { name: 'Sameeha Fahim', role: 'Head of Media', category: 'media', image: '/sandbox/assets/Sameeha-fahim.webp', linkedin: 'https://www.linkedin.com/in/sameeha-fahim-819023280', education: 'BSc (Hons) Cyber Security and Networking' },
@@ -37,8 +38,6 @@ export const TEAM = [
   { name: 'Nevanya Nonis', role: 'Head of Communications', category: 'comms', image: '/sandbox/assets/Nevanya.webp', linkedin: 'https://www.linkedin.com/in/nevanya-nonis-9088b1355', education: 'BSc (Hons) Business Management' },
   { name: 'Asna Azver', role: 'Head of Logistics', category: 'logistics', image: '/sandbox/assets/Asna-Azwer.webp', linkedin: 'https://www.linkedin.com/in/asna-azver-310249365', education: 'LLB (Hons)' },
   { name: 'Burhanuddin MMB', role: 'Head of Logistics', category: 'logistics', image: '/sandbox/assets/Burhan-Mansoor.webp', linkedin: 'https://www.linkedin.com/in/m-burhanuddin-m-mansoor-bharmal-09373a249', education: 'BSc (Hons) Business Management (Innovation & Entrepreneurship)' },
-  // --- IT Team ---
-  { name: 'Hana Careem', role: 'IT Team', category: 'it', image: '/sandbox/assets/Hana-Careem.webp', linkedin: 'https://www.linkedin.com/in/hana-careem-4304b2349', education: 'BSc (Hons) Computer Science', objectPosition: '50% 0%' },
   // --- Media Team ---
   { name: 'Tuan Shaahid', role: 'Media Team', category: 'media', image: '/sandbox/assets/Tuan-shaahid.webp', linkedin: 'https://www.linkedin.com/in/tuan-shaahid-rainudeen-47b705374', education: 'BSc (Hons) Computer Science', objectPosition: '50% 0%' },
   { name: 'Wanmini Dasanya', role: 'Media Team', category: 'media', image: '/sandbox/assets/Dasanya.webp', linkedin: 'https://www.linkedin.com/in/dasanya-dahanayake-b09427363', education: 'BSc (Hons) International Business Management', objectPosition: '50% 0%' },

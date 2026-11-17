@@ -27,7 +27,7 @@ function handleSponsorshipClick(e) {
 
 export default function PartnerUp() {
   return (
-    <section id="become-a-partner" className="relative overflow-hidden pt-32 pb-20 bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)]">
+    <section id="become-a-partner" className="relative overflow-hidden pt-32 pb-20">
       {/* Soft plum glows for depth — matches AboutSandbox */}
       <div className="absolute top-[12%] left-[8%] w-[400px] h-[400px] bg-[#7A3D68] rounded-full filter blur-[90px] opacity-40 pointer-events-none"></div>
       <div className="absolute bottom-[12%] right-[8%] w-[450px] h-[450px] bg-[#A87196] rounded-full filter blur-[90px] opacity-30 pointer-events-none"></div>

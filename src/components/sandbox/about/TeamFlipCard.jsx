@@ -76,7 +76,7 @@ export default function TeamFlipCard({ member }) {
 
           <div className="flex flex-col px-4 pt-1 pb-4 min-h-[7.25rem] md:min-h-0">
             <p
-              className={`font-['Space_Grotesk'] font-medium text-white ${
+              className={`font-display font-medium text-white ${
                 longName
                   ? 'text-[13px] md:text-[15px] leading-tight md:leading-snug mt-0.5 md:mt-[1px]'
                   : 'text-base'
@@ -115,7 +115,7 @@ export default function TeamFlipCard({ member }) {
                      border-[#7C3AED]/40 bg-[#1a1526] p-5"
         >
           <p
-            className={`font-['Space_Grotesk'] font-medium text-white ${
+            className={`font-display font-medium text-white ${
               longName
                 ? 'text-[13px] md:text-[15px] leading-tight md:leading-snug mt-0.5 md:mt-[1px]'
                 : 'text-base'

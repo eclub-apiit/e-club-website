@@ -1,65 +1,81 @@
 import React from 'react';
+import { Rocket } from 'lucide-react';
+import { SponsorCard } from './PastPartners';
 import ScrollReveal from '../ui/ScrollReveal';
 
-// TODO: Replace with exact sponsor names and logos
 const SPONSORS_DATA = {
-  "Title Sponsor": [
-    { name: "Placeholder Sponsor 1", logo: "/sandbox/assets/eclub-logo.png" }
+  'Printing Partner': [
+    { name: 'Methuli Premium', img: '/sandbox/assets/methuli-logo.png' },
   ],
-  "Platinum Sponsors": [
-    { name: "Placeholder Sponsor 2", logo: "/sandbox/assets/eclub-logo.png" },
-    { name: "Placeholder Sponsor 3", logo: "/sandbox/assets/eclub-logo.png" }
+  'E-Logo Sponsors': [
+    { name: 'ACCA', img: '/sandbox/assets/acca-logo.png' },
+    { name: 'Keells', img: '/sandbox/assets/keells-logo.png' },
   ],
-  "Gold Sponsors": [
-    { name: "Placeholder Sponsor 4", logo: "/sandbox/assets/eclub-logo.png" },
-    { name: "Placeholder Sponsor 5", logo: "/sandbox/assets/eclub-logo.png" }
-  ]
+  'Host & Organiser': [
+    { name: 'Asia Pacific Institute of Information Technology (APIIT)', img: '/sandbox/assets/apiit-logo-black.jpg' },
+    { name: 'Entrepreneurship Club of APIIT', img: '/sandbox/assets/eclub-logo.png' },
+  ],
 };
+
+function CardTile({ sponsor }) {
+  return (
+    <div className="group h-full w-full overflow-hidden rounded-[14px] border border-white/[0.08] bg-[#1B1220] p-3 transition-shadow duration-200 hover:shadow-[0_0_28px_rgba(166,77,121,0.45)] motion-reduce:transition-none">
+      <SponsorCard p={sponsor} align="center" />
+    </div>
+  );
+}
 
 export default function SponsorsList() {
   return (
-    <section className="pt-40 pb-24 bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)] relative overflow-hidden z-10 min-h-screen">
-      {/* Soft plum glows for depth — matches PartnerUp */}
-      <div className="absolute top-[12%] left-[8%] w-[400px] h-[400px] bg-[#7A3D68] rounded-full filter blur-[90px] opacity-40 pointer-events-none z-0"></div>
-      <div className="absolute bottom-[12%] right-[8%] w-[450px] h-[450px] bg-[#A87196] rounded-full filter blur-[90px] opacity-30 pointer-events-none z-0"></div>
+    <section className="relative z-10 overflow-hidden pb-24 pt-40 font-sans">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute left-[8%] top-[12%] h-[400px] w-[400px] rounded-full bg-[#7A3D68] opacity-40 blur-[90px]" />
+        <div className="absolute bottom-[12%] right-[8%] h-[450px] w-[450px] rounded-full bg-[#A87196] opacity-30 blur-[90px]" />
+      </div>
+      <div className="sandbox-starfield pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="relative z-10 mx-auto max-w-[1200px] px-[clamp(20px,5vw,40px)]">
         <ScrollReveal>
-          <div className="text-center mb-20">
-            <h1 className="text-5xl md:text-7xl font-coolvetica font-normal text-white tracking-normal mb-6">
-              OUR <span className="text-[#a64d79]">SPONSORS</span>
-            </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              The organizations that make Sandbox possible.
+          <div className="text-center">
+            <span className="mb-4 inline-flex items-center gap-2 font-poppins text-[12px] font-semibold uppercase tracking-[0.32em] text-[#a64d79]">
+              <Rocket className="h-3.5 w-3.5" aria-hidden="true" />
+              Sandbox 3.0 · 2026
+            </span>
+            <h2 className="font-poppins text-[clamp(38px,7vw,76px)] font-bold leading-[1.02] tracking-[-0.02em] text-white">
+              Meet Our Sponsors
+            </h2>
+            <p className="mx-auto mt-4 max-w-[560px] text-[clamp(15px,2vw,17px)] text-[#C6B9E0]">
+              The organisations that make Sandbox 3.0 possible.
             </p>
           </div>
         </ScrollReveal>
 
-        {Object.entries(SPONSORS_DATA).map(([tier, sponsors], idx) => (
-          <div key={idx} className="mb-20">
-            <ScrollReveal>
-              <h2 className="text-3xl font-bold font-display text-center text-white mb-10 pb-4">
-                {tier}
-              </h2>
-            </ScrollReveal>
-
-            <div className="flex flex-wrap justify-center gap-8">
-              {sponsors.map((sponsor, i) => (
-                <ScrollReveal key={i} delay={i * 100} direction="up">
-                  <div className="w-48 h-48 md:w-64 md:h-64 relative bg-slate-900 border border-white/5 rounded-2xl flex items-center justify-center p-8 hover:border-[#7C3AED]/50 transition-colors">
-                    <div className="relative w-full h-full opacity-70 hover:opacity-100 transition-opacity">
-                      <img
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        className="absolute inset-0 h-full w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                      />
-                    </div>
-                  </div>
+        <div className="relative mt-24">
+          <img
+            src="/sandbox/assets/rocket.png"
+            alt=""
+            aria-hidden="true"
+            className="sandbox-sponsor-rocket absolute left-5 top-[-3rem] z-0 w-10 md:left-1/2 md:-translate-x-1/2"
+          />
+          <div className="relative z-10 space-y-16">
+            {Object.entries(SPONSORS_DATA).map(([tier, sponsors]) => (
+              <div key={tier} className="text-center">
+                <ScrollReveal>
+                  <h3 className="mb-[22px] font-poppins text-[clamp(20px,3vw,27px)] font-semibold tracking-[-0.01em] text-white">
+                    {tier}
+                  </h3>
                 </ScrollReveal>
-              ))}
-            </div>
+                <div className="flex flex-wrap items-stretch justify-center gap-[14px]">
+                  {sponsors.map((sponsor, index) => (
+                    <ScrollReveal key={sponsor.name} delay={index * 100} className="flex w-[calc(50%-7px)] sm:w-[200px]">
+                      <CardTile sponsor={sponsor} />
+                    </ScrollReveal>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

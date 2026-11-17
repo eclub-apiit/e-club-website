@@ -110,7 +110,7 @@ const nameTextStyle = {
   wordBreak: 'break-word',
 };
 
-function SponsorCard({ p }) {
+export function SponsorCard({ p, align = 'left' }) {
   const isBlack = p.box === 'black';
   // box: 'none' → no card behind the logo (transparent); 'black' → dark card; default → white card
   const background = p.box === 'none' ? 'transparent' : isBlack ? '#000000' : '#FFFFFF';
@@ -141,7 +141,7 @@ function SponsorCard({ p }) {
           </span>
         )}
       </div>
-      <span style={nameTextStyle}>{p.name}</span>
+      <span style={{ ...nameTextStyle, textAlign: align }}>{p.name}</span>
     </div>
   );
 }
@@ -309,7 +309,7 @@ export default function PastPartners() {
   return (
     <section
       id="past-sponsors"
-      className="pb-6 md:pb-20 relative bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)] font-sans"
+      className="pb-6 md:pb-20 relative font-sans"
     >
       {/* Soft plum glows for depth — matches PartnerUp.
           Clipped by this overflow-hidden layer so the wide blurred blobs can't
@@ -327,7 +327,7 @@ export default function PastPartners() {
           Our Past Partners
         </span>
         <h2 className="font-poppins font-bold text-[clamp(38px,7vw,76px)] leading-[1.02] tracking-[-0.02em] text-white">
-          Sandbox <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#a64d79]">Sponsors</span>
+          Sandbox Sponsors
         </h2>
         <p className="text-[#C6B9E0] max-w-[560px] mx-auto mt-4 text-[clamp(15px,2vw,17px)]">
           The organisations that powered Sri Lanka's biggest inter-school business pitching competition. Meet the partners who stood with previous sandbox competitions.
