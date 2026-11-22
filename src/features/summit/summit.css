@@ -138,15 +138,14 @@ html.si-document{scroll-behavior:smooth;scroll-padding-top:110px;background:#060
 .si-speaker-story.si-voices .si-speakers article.si-speaker-card{display:block;position:absolute;left:calc(50% - 105px);top:18px;width:210px;min-height:330px;opacity:calc(1 - min(var(--seat-distance),3)*.25);transform:translate3d(calc(var(--seat-offset)*132px),calc(var(--seat-distance)*21px),calc(var(--seat-distance)*-95px)) rotateY(calc(var(--seat-offset)*-14deg)) scale(calc(1 - var(--seat-distance)*.075));transform-origin:50% 60%;transition:transform .7s cubic-bezier(.2,.65,.25,1),opacity .55s,border-color .4s;transition-delay:0s;background:#0b1b23;border:1px solid #28464c;box-shadow:0 25px 60px #0006;overflow:hidden}
 .si-speaker-story.si-voices .si-speakers article.si-speaker-card.is-focused{border-color:#65aa98;box-shadow:0 20px 65px #0009,0 0 35px #77d9c208}
 .si-speaker-story .si-speaker-seat{height:235px;border-bottom-color:#335a5d;background:radial-gradient(ellipse at 50% 90%,#204448,#0a1c24 65%)}
-.si-speaker-story .si-speaker-seat>b{top:13px;left:14px;font-size:10px;color:#8db9af}
+.si-speaker-story .si-speaker-seat>b{position:absolute;top:10px;left:10px;font-size:9px;font-weight:650;letter-spacing:.05em;color:#77d9c2;background:#060e12d9;backdrop-filter:blur(4px);padding:2px 6px;border-radius:3px;border:1px solid #77d9c233;z-index:3;text-shadow:none}
 .si-speaker-story .si-seat-back{top:65px}.si-speaker-story .si-seat-bottom{top:143px}.si-speaker-story .si-seat-leg{top:169px}
 .si-speaker-story .si-speaker-spotlight{opacity:.25;transform:scaleY(1);transition:opacity .5s;transition-delay:0s}
 .si-speaker-card.is-focused .si-speaker-spotlight{opacity:1}
-.si-speaker-portrait{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;z-index:1;filter:grayscale(1) contrast(1.13) brightness(.76);transform:scale(1.015);transition:filter .45s,transform .65s}
-.si-speaker-portrait-wash{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,#0d6964bc 0%,#084447ad 48%,#08161cfa 100%);opacity:.9}
-.si-speaker-card.is-focused .si-speaker-portrait{filter:grayscale(.35) contrast(1.08) brightness(.9);transform:scale(1.045)}
-.si-speaker-card.is-focused .si-speaker-portrait-wash{opacity:.7}
-.si-speaker-story .si-speaker-seat>b{z-index:3;text-shadow:0 1px 9px #000}
+.si-speaker-portrait{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;z-index:1;filter:grayscale(.25) brightness(.9);transform:scale(1.015);transition:filter .45s,transform .65s}
+.si-speaker-portrait-wash{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,transparent 0%,transparent 55%,#08161cd9 100%);opacity:.45}
+.si-speaker-card.is-focused .si-speaker-portrait{filter:none;transform:scale(1.03)}
+.si-speaker-card.is-focused .si-speaker-portrait-wash{opacity:.25}
 .si-speaker-card-copy{padding:17px 16px 20px}
 .si-speaker-card-copy>.si-eyebrow{font-size:7px;letter-spacing:.1em}
 .si-speaker-card-copy>h3{font-size:15px;margin:10px 0 8px;letter-spacing:-.025em}
