@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { summit, agendaTime } from './event';
 
 const story=[
-  ['A seat for experience.', 'Meet the people bringing real business perspectives to the stage.'],
-  ['A different point of view.', 'Each voice adds another perspective to the conversation.'],
-  ['Look beyond the headline.', 'Get curious about the decisions and experiences behind an entrepreneurial journey.'],
+  ['Experience takes the stage.', 'Meet the people bringing real business perspectives to the room.'],
+  ['A founder’s perspective.', 'Hear the thinking behind building a brand, a career and a point of view.'],
+  ['The work behind the headline.', 'Get curious about the decisions and experiences behind an entrepreneurial journey.'],
   ['Your questions belong here.', 'Industry insight meets audience curiosity in the panel Q&A.'],
   ['Take a perspective with you.', 'Continue the conversation in the connections you make after the panel.'],
 ];
@@ -41,7 +41,7 @@ export default function Speakers(){
       <div className="si-speaker-theatre">
         <div className="si-speakers si-speaker-cast" style={{'--speaker-count':summit.speakers.length}}>
           {summit.speakers.map((person,i)=><article key={person.id} className={`si-speaker-card ${i===active?'is-focused':''}`} aria-hidden={!reduced&&i!==active} inert={!reduced&&i!==active} style={{'--seat-offset':i-active,'--seat-distance':Math.abs(i-active),'--speaker-order':i,zIndex:summit.speakers.length-Math.abs(i-active)}}>
-            <div className="si-speaker-seat" aria-hidden="true"><span className="si-speaker-spotlight"/>{person.confirmed&&person.image?<img className="si-speaker-portrait" src={person.image} alt="" loading="lazy"/>:<><span className="si-seat-back"/><span className="si-seat-bottom"/><span className="si-seat-leg"/><span className="si-seat-leg second"/></>}<b>{String(i+1).padStart(2,'0')}</b></div>
+            <div className="si-speaker-seat" aria-hidden="true"><span className="si-speaker-spotlight"/>{person.confirmed&&person.image?<img className="si-speaker-portrait" src={person.image} alt="" loading="lazy"/>:<><span className="si-seat-back"/><span className="si-seat-bottom"/><span className="si-seat-leg"/><span className="si-seat-leg second"/></>}<span className="si-speaker-portrait-wash"/><b>{String(i+1).padStart(2,'0')}</b></div>
             <div className="si-speaker-card-copy"><p className="si-eyebrow">The panel / {String(i+1).padStart(2,'0')}</p><h3>{person.confirmed&&person.name?person.name:'To be announced'}</h3><p>{person.confirmed?[person.role,person.organisation].filter(Boolean).join(' · '):'Speaker announcement coming soon'}</p></div>
           </article>)}
         </div>

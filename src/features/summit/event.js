@@ -26,9 +26,15 @@ export const summit = {
     introduction: "An inaugural summit bringing aspiring entrepreneurs, industry professionals, university students, academics, and innovators into one room to exchange experiences and inspire what comes next.",
     purpose: "The strongest ideas rarely grow in isolation. Convergence creates a space where perspectives meet, experiences are shared, and entrepreneurial ambition becomes action.",
   },
-  magazine: { title: "Innovator’s Digest", edition: 4, volume: 4, timing: "Following the panel discussion", url: "" },
-  // Add confirmed portraits here. Supports 5 or 6 people; no moderator assumed.
-  speakers: Array.from({ length: 5 }, (_, index) => ({ id: `speaker-${index + 1}`, confirmed: false, name: "", role: "", organisation: "", image: "", imageAlt: "" })),
+  magazine: { title: "Innovator’s Digest", edition: 4, volume: 4, timing: "Following the panel discussion", url: "", qrImage: "" },
+  // Confirmed panelists supplied by the organisers. No moderator is assumed.
+  speakers: [
+    { id: "michael-sathasivam", confirmed: true, name: "Michael Sathasivam", role: "Regional CEO", organisation: "Koko", image: "/summit/panelists/Michael-panel.webp", imageAlt: "Michael Sathasivam" },
+    { id: "anuki-premachandra", confirmed: true, name: "Anuki Premachandra", role: "Founder & CEO", organisation: "Lines", image: "/summit/panelists/Anuki-panel.webp", imageAlt: "Anuki Premachandra" },
+    { id: "abraar-wahab", confirmed: true, name: "Abraar Wahab", role: "Founder of Nudge Media; Sales & Marketing Director", organisation: "Aero Travels", image: "/summit/panelists/Abraar.jpeg", imageAlt: "Abraar Wahab" },
+    { id: "saamakhya-gajanayake", confirmed: true, name: "Saamakhya Gajanayake", role: "Sri Lankan National Athlete, Entrepreneur & Coach", organisation: "", image: "/summit/panelists/Saamakhya.jpeg", imageAlt: "Saamakhya Gajanayake" },
+    { id: "nikin-matharaarachchi", confirmed: true, name: "Nikin Matharaarachchi", role: "Founder & CEO", organisation: "Synapse Artificial Intelligence Labs", image: "/summit/panelists/Nikin.jpeg", imageAlt: "Nikin Matharaarachchi" },
+  ],
   experiences: [
     { id: "listen", verb: "Listen.", title: "The stories behind the decisions.", description: "Hear entrepreneurial experiences and the perspectives that shape them. Make room for a different way of thinking.", detail: "Panel discussion", target: "panel" },
     { id: "ask", verb: "Ask.", title: "Bring your questions into the room.", description: "An open exchange between the people on stage and the people in the audience. Curiosity is part of the conversation.", detail: "Audience Q&A", target: "panel" },
