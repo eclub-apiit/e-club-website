@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowDown, Menu, X, CalendarDays, Plus, Minus } from 'lucide-react';
 import { summit, summitDate, agendaTime, getRegistrationUrl, downloadCalendar } from './event';
 import Speakers from './Speakers';
+import MagazineAccess from './MagazineAccess';
 import './summit.css';
 
 const chapters=[
@@ -141,12 +142,12 @@ export default function SummitPage(){
     <main><Journey onArrivalExit={setShowNavWordmark}/>
       <section id="about" className="si-about si-wrap" aria-labelledby="about-heading"><p className="si-eyebrow">The reason we come together</p><div className="si-about-grid"><h2 id="about-heading">Different perspectives.<br/><em>Shared possibilities.</em></h2><div><p className="si-body-large">{summit.copy.purpose}</p><p>The Convergence Summit 2026 is an entrepreneurship summit organised by the Entrepreneurship Club of APIIT for Global Entrepreneurship Week. {summit.copy.introduction}</p><p className="si-event-distinction">Explore the panel discussion and Q&amp;A, Innovator’s Digest Volume 4 launch, networking and The Boardroom business simulation. <Link to="/sandbox/">Sandbox 3.0</Link> is our separate inter-school business pitching competition for school students, with its own registration form.</p><div className="si-organiser-brand"><span className="si-eyebrow">Meet the organisers</span><Link to="/" aria-label="Meet the Entrepreneurship Club of APIIT"><img src={summit.assets.eclub} width="782" height="224" alt="Entrepreneurship Club of APIIT"/></Link><p>Bringing university communities and industry together.</p></div></div></div><div className="si-audiences">{summit.audiences.map((a,i)=><div key={a.title}><span>0{i+1}</span><h3>{a.title}</h3><p>{a.description}</p></div>)}</div></section>
       <Speakers/>
-      <Programme/>
+      <Programme/><MagazineAccess/>
       <section id="registration" className="si-registration si-wrap" aria-labelledby="registration-heading"><div className="si-registration-top"><p className="si-eyebrow">An invitation to what’s next</p><span>26.11.2026</span></div><h2 id="registration-heading">Bring your curiosity.<br/><em>Find your convergence.</em></h2><div className="si-registration-bottom"><div><p>{summitDate.full} · 9:30 am onwards</p><p>{summit.venue}</p>{summit.venueDetails.address&&<p>{summit.venueDetails.address}</p>}{summit.venueDetails.mapsUrl&&<a className="si-inline-link" href={summit.venueDetails.mapsUrl} target="_blank" rel="noopener noreferrer">View location <ArrowUpRight size={14}/></a>}<p className="si-registration-status" role="status">{getRegistrationUrl()?'Registration is open. Reserve your place using the official Microsoft form.':'Registration link coming soon. Save the date and check back for the official form.'}</p></div><div className="si-registration-actions">{getRegistrationUrl()&&<Register>Register Now</Register>}<button className="si-button si-button-outline" onClick={downloadCalendar}>Save the date <CalendarDays size={17}/></button></div></div></section>
     </main>
     <footer className="si-footer si-wrap">
       <div className="si-footer-top"><div className="si-footer-event"><img src={summit.assets.logo} width="1817" height="448" alt="The Convergence Summit 2026"/><p>Where Ideas Inspire Action.</p><span>26 November 2026 · {summit.venue}</span></div><div className="si-footer-brands"><p className="si-eyebrow">An Entrepreneurship Week experience</p><BrandMarks/></div></div>
-      <div className="si-footer-bottom"><p>© {summitDate.year} Entrepreneurship Club of APIIT</p><nav aria-label="Footer summit navigation"><a href="#programme">The programme</a><a href="#registration">Registration <ArrowUpRight size={12}/></a><Link to="/">Back to E-Club <ArrowUpRight size={12}/></Link></nav><a href="#journey">Back to top <ArrowUpRight size={13}/></a></div>
+      <div className="si-footer-bottom"><p>© {summitDate.year} Entrepreneurship Club of APIIT</p><nav aria-label="Footer summit navigation"><a href="#programme">The programme</a><a href="#digital-magazine">Digital magazine</a><a href="#registration">Registration <ArrowUpRight size={12}/></a><Link to="/">Back to E-Club <ArrowUpRight size={12}/></Link></nav><a href="#journey">Back to top <ArrowUpRight size={13}/></a></div>
     </footer>
   </div>;
 }

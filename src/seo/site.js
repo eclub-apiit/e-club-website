@@ -24,10 +24,15 @@ export const pageDefinitions = {
   '/sandbox/sponsors/': {title: 'Sandbox Sponsors & Partners | APIIT E-Club', heading: 'Sandbox Sponsors & Partners', description: 'Explore the partners supporting Sandbox and school-student entrepreneurship through the APIIT Entrepreneurship Club.'},
   '/sandbox/what-we-offer/': {title: 'What Sandbox Offers | School Entrepreneurship | APIIT E-Club', heading: 'What Sandbox Offers', description: 'Discover the learning, mentoring and pitching opportunities offered by Sandbox, APIIT E-Club’s inter-school competition.'},
 };
+// Interactive room URLs and private host controls are intentionally not indexed.
+export const privatePageDefinitions=Object.fromEntries(['','host/','screen/'].map(role=>[
+  `/convergence-summit-2026/play/${role}`,
+  {title:`Convergence Play${role==='host/'?' — Host Desk':role==='screen/'?' — Room Screen':''} | APIIT E-Club`,heading:'Convergence Play',description:'Join an interactive Convergence Summit game room. Founder Shuffle, Brand Detective and Founder’s Call.'},
+]));
 export const normalisePath = path => path === '/' ? '/' : `/${path.split('/').filter(Boolean).join('/')}/`;
 export function getPageSeo(pathname, options = {}) {
   const path = normalisePath(pathname);
-  const definition = pageDefinitions[path];
+  const definition = pageDefinitions[path] || privatePageDefinitions[path];
   let page = definition || {title: 'Page not found | APIIT E-Club', heading: 'Page not found', description: 'Explore the official APIIT Entrepreneurship Club website.'};
   const promoteConvergence = isConvergencePromoted(options.now ?? Date.now());
   if(path === '/' && !promoteConvergence) page = {...page,
@@ -56,5 +61,5 @@ export function getPageSeo(pathname, options = {}) {
     webPage.about = [ ...(promoteConvergence ? [{'@type':'Thing', name:summit.name, url:origin+summit.route}] : []), {'@type':'Thing', name:sandbox.name, url:origin+sandbox.route} ];
   }
   graph.push(webPage);
-  return {...page, path, url, image, indexable:Boolean(definition), structuredData:{'@context':'https://schema.org','@graph':graph}};
+  return {...page, path, url, image, indexable:Boolean(pageDefinitions[path]), structuredData:{'@context':'https://schema.org','@graph':graph}};
 }

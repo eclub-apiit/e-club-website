@@ -1,6 +1,6 @@
 import sharp from 'sharp';
 import {readFile} from 'node:fs/promises';
-import {getPageSeo, pageDefinitions, origin} from '../src/seo/site.js';
+import {getPageSeo, pageDefinitions, privatePageDefinitions, origin} from '../src/seo/site.js';
 import {summit, summitDate, getRegistrationUrl, agendaTime} from '../src/features/summit/event.js';
 import {sandbox, isConvergencePromoted} from '../src/data/registrations.js';
 
@@ -25,7 +25,7 @@ function staticContent(seo, registrationUrl){
 function summitDescription(){return 'An entrepreneurship summit with an industry panel discussion and Q&A, the Innovator’s Digest Volume 4 magazine launch, networking and The Boardroom business simulation.';}
 function renderPage(template, seo, registrationUrl){
   const meta=(name,value,attribute='name')=>`<meta ${attribute}="${name}" content="${escape(value)}" />`;
-  const head=[`<title>${escape(seo.title)}</title>`,meta('description',seo.description),meta('robots','index,follow,max-image-preview:large'),`<link rel="canonical" href="${seo.url}" />`,
+  const head=[`<title>${escape(seo.title)}</title>`,meta('description',seo.description),meta('robots',seo.indexable?'index,follow,max-image-preview:large':'noindex,follow'),`<link rel="canonical" href="${seo.url}" />`,
     ...Object.entries({'og:type':'website','og:site_name':'APIIT Entrepreneurship Club','og:title':seo.title,'og:description':seo.description,'og:url':seo.url,'og:image':seo.image,'og:image:width':'1200','og:image:height':'630','og:image:alt':seo.heading,'og:locale':'en_LK'}).map(([key,value])=>meta(key,value,'property')),
     ...Object.entries({'twitter:card':'summary_large_image','twitter:title':seo.title,'twitter:description':seo.description,'twitter:image':seo.image,'twitter:image:alt':seo.heading}).map(([key,value])=>meta(key,value)),
     `<script id="site-structured-data" type="application/ld+json">${JSON.stringify(seo.structuredData).replace(/</g,'\\u003c')}</script>`].join('\n    ');
@@ -41,7 +41,7 @@ export default function seoPages(options={}){
     const entry=bundle['index.html'];
     if(!entry)throw new Error('SEO build requires the Vite HTML entry.');
     const template=String(entry.source);
-    for(const path of Object.keys(pageDefinitions)){
+    for(const path of [...Object.keys(pageDefinitions),...Object.keys(privatePageDefinitions)]){
       const seo=getPageSeo(path,options),html=renderPage(template,seo,options.registrationUrl);
       if(path==='/')entry.source=html;
       else this.emitFile({type:'asset',fileName:`${path.slice(1)}index.html`,source:html});
