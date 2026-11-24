@@ -1,0 +1,2047 @@
+[
+  {
+    "id": "shuffle-easy-1",
+    "game": "shuffle",
+    "difficulty": "easy",
+    "title": "REVENUE",
+    "answers": [
+      "REVENUE"
+    ],
+    "explanation": "REVENUE: Money earned from sales before subtracting costs.",
+    "public_data": {
+      "prompt": "Money earned from sales before subtracting costs.",
+      "wordLengths": [
+        7
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-easy-2",
+    "game": "shuffle",
+    "difficulty": "easy",
+    "title": "PROFIT",
+    "answers": [
+      "PROFIT"
+    ],
+    "explanation": "PROFIT: What remains when revenue exceeds costs.",
+    "public_data": {
+      "prompt": "What remains when revenue exceeds costs.",
+      "wordLengths": [
+        6
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-easy-3",
+    "game": "shuffle",
+    "difficulty": "easy",
+    "title": "BRAND",
+    "answers": [
+      "BRAND"
+    ],
+    "explanation": "BRAND: The identity that helps people recognise a business.",
+    "public_data": {
+      "prompt": "The identity that helps people recognise a business.",
+      "wordLengths": [
+        5
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-easy-4",
+    "game": "shuffle",
+    "difficulty": "easy",
+    "title": "CUSTOMER",
+    "answers": [
+      "CUSTOMER"
+    ],
+    "explanation": "CUSTOMER: The person or organisation buying your product.",
+    "public_data": {
+      "prompt": "The person or organisation buying your product.",
+      "wordLengths": [
+        8
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-easy-5",
+    "game": "shuffle",
+    "difficulty": "easy",
+    "title": "BUDGET",
+    "answers": [
+      "BUDGET"
+    ],
+    "explanation": "BUDGET: A plan for how much you can spend.",
+    "public_data": {
+      "prompt": "A plan for how much you can spend.",
+      "wordLengths": [
+        6
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-easy-6",
+    "game": "shuffle",
+    "difficulty": "easy",
+    "title": "MARKET",
+    "answers": [
+      "MARKET"
+    ],
+    "explanation": "MARKET: The group of buyers and sellers for a product.",
+    "public_data": {
+      "prompt": "The group of buyers and sellers for a product.",
+      "wordLengths": [
+        6
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-easy-7",
+    "game": "shuffle",
+    "difficulty": "easy",
+    "title": "FOUNDER",
+    "answers": [
+      "FOUNDER"
+    ],
+    "explanation": "FOUNDER: Someone who starts a business.",
+    "public_data": {
+      "prompt": "Someone who starts a business.",
+      "wordLengths": [
+        7
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-easy-8",
+    "game": "shuffle",
+    "difficulty": "easy",
+    "title": "PITCH",
+    "answers": [
+      "PITCH"
+    ],
+    "explanation": "PITCH: A short presentation that explains and sells an idea.",
+    "public_data": {
+      "prompt": "A short presentation that explains and sells an idea.",
+      "wordLengths": [
+        5
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-easy-9",
+    "game": "shuffle",
+    "difficulty": "easy",
+    "title": "DEMAND",
+    "answers": [
+      "DEMAND"
+    ],
+    "explanation": "DEMAND: How much of a product buyers want at a given price.",
+    "public_data": {
+      "prompt": "How much of a product buyers want at a given price.",
+      "wordLengths": [
+        6
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-easy-10",
+    "game": "shuffle",
+    "difficulty": "easy",
+    "title": "TEAMWORK",
+    "answers": [
+      "TEAMWORK"
+    ],
+    "explanation": "TEAMWORK: People combining their effort to reach a shared goal.",
+    "public_data": {
+      "prompt": "People combining their effort to reach a shared goal.",
+      "wordLengths": [
+        8
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-medium-1",
+    "game": "shuffle",
+    "difficulty": "medium",
+    "title": "CASH FLOW",
+    "answers": [
+      "CASH FLOW"
+    ],
+    "explanation": "CASH FLOW: Money moving into and out of a business over time.",
+    "public_data": {
+      "prompt": "Money moving into and out of a business over time.",
+      "wordLengths": [
+        4,
+        4
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-medium-2",
+    "game": "shuffle",
+    "difficulty": "medium",
+    "title": "EQUITY",
+    "answers": [
+      "EQUITY"
+    ],
+    "explanation": "EQUITY: An ownership stake in a business.",
+    "public_data": {
+      "prompt": "An ownership stake in a business.",
+      "wordLengths": [
+        6
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-medium-3",
+    "game": "shuffle",
+    "difficulty": "medium",
+    "title": "PROTOTYPE",
+    "answers": [
+      "PROTOTYPE"
+    ],
+    "explanation": "PROTOTYPE: An early working model built to test an idea.",
+    "public_data": {
+      "prompt": "An early working model built to test an idea.",
+      "wordLengths": [
+        9
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-medium-4",
+    "game": "shuffle",
+    "difficulty": "medium",
+    "title": "BOOTSTRAP",
+    "answers": [
+      "BOOTSTRAP"
+    ],
+    "explanation": "BOOTSTRAP: Build a business primarily using your own resources.",
+    "public_data": {
+      "prompt": "Build a business primarily using your own resources.",
+      "wordLengths": [
+        9
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-medium-5",
+    "game": "shuffle",
+    "difficulty": "medium",
+    "title": "MARGIN",
+    "answers": [
+      "MARGIN"
+    ],
+    "explanation": "MARGIN: Profit expressed as a proportion of sales.",
+    "public_data": {
+      "prompt": "Profit expressed as a proportion of sales.",
+      "wordLengths": [
+        6
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-medium-6",
+    "game": "shuffle",
+    "difficulty": "medium",
+    "title": "INVOICE",
+    "answers": [
+      "INVOICE"
+    ],
+    "explanation": "INVOICE: A document asking a customer to pay for goods or services.",
+    "public_data": {
+      "prompt": "A document asking a customer to pay for goods or services.",
+      "wordLengths": [
+        7
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-medium-7",
+    "game": "shuffle",
+    "difficulty": "medium",
+    "title": "FEEDBACK",
+    "answers": [
+      "FEEDBACK"
+    ],
+    "explanation": "FEEDBACK: What users tell you about their experience.",
+    "public_data": {
+      "prompt": "What users tell you about their experience.",
+      "wordLengths": [
+        8
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-medium-8",
+    "game": "shuffle",
+    "difficulty": "medium",
+    "title": "VALIDATION",
+    "answers": [
+      "VALIDATION"
+    ],
+    "explanation": "VALIDATION: Testing whether evidence supports your business idea.",
+    "public_data": {
+      "prompt": "Testing whether evidence supports your business idea.",
+      "wordLengths": [
+        10
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-medium-9",
+    "game": "shuffle",
+    "difficulty": "medium",
+    "title": "NETWORKING",
+    "answers": [
+      "NETWORKING"
+    ],
+    "explanation": "NETWORKING: Building professional relationships and connections.",
+    "public_data": {
+      "prompt": "Building professional relationships and connections.",
+      "wordLengths": [
+        10
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-medium-10",
+    "game": "shuffle",
+    "difficulty": "medium",
+    "title": "SCALABLE",
+    "answers": [
+      "SCALABLE"
+    ],
+    "explanation": "SCALABLE: Able to grow without costs increasing at the same rate.",
+    "public_data": {
+      "prompt": "Able to grow without costs increasing at the same rate.",
+      "wordLengths": [
+        8
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-hard-1",
+    "game": "shuffle",
+    "difficulty": "hard",
+    "title": "BREAK EVEN",
+    "answers": [
+      "BREAK EVEN"
+    ],
+    "explanation": "BREAK EVEN: The point where total revenue equals total costs.",
+    "public_data": {
+      "prompt": "The point where total revenue equals total costs.",
+      "wordLengths": [
+        5,
+        4
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-hard-2",
+    "game": "shuffle",
+    "difficulty": "hard",
+    "title": "VALUATION",
+    "answers": [
+      "VALUATION"
+    ],
+    "explanation": "VALUATION: The calculated financial worth of a company or startup.",
+    "public_data": {
+      "prompt": "The calculated financial worth of a company or startup.",
+      "wordLengths": [
+        9
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-hard-3",
+    "game": "shuffle",
+    "difficulty": "hard",
+    "title": "SEED ROUND",
+    "answers": [
+      "SEED ROUND"
+    ],
+    "explanation": "SEED ROUND: An early funding stage that helps a new startup build and test its product.",
+    "public_data": {
+      "prompt": "An early funding stage that helps a new startup build and test its product.",
+      "wordLengths": [
+        4,
+        5
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-hard-4",
+    "game": "shuffle",
+    "difficulty": "hard",
+    "title": "PITCH DECK",
+    "answers": [
+      "PITCH DECK"
+    ],
+    "explanation": "PITCH DECK: A slide presentation used to pitch a business idea to investors.",
+    "public_data": {
+      "prompt": "A slide presentation used to pitch a business idea to investors.",
+      "wordLengths": [
+        5,
+        4
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-hard-5",
+    "game": "shuffle",
+    "difficulty": "hard",
+    "title": "DISRUPTION",
+    "answers": [
+      "DISRUPTION"
+    ],
+    "explanation": "DISRUPTION: Innovation that transforms an existing market and displaces incumbents.",
+    "public_data": {
+      "prompt": "Innovation that transforms an existing market and displaces incumbents.",
+      "wordLengths": [
+        10
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-hard-6",
+    "game": "shuffle",
+    "difficulty": "hard",
+    "title": "ACQUISITION",
+    "answers": [
+      "ACQUISITION"
+    ],
+    "explanation": "ACQUISITION: When one company purchases and takes control of another business.",
+    "public_data": {
+      "prompt": "When one company purchases and takes control of another business.",
+      "wordLengths": [
+        11
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-hard-7",
+    "game": "shuffle",
+    "difficulty": "hard",
+    "title": "DUE DILIGENCE",
+    "answers": [
+      "DUE DILIGENCE"
+    ],
+    "explanation": "DUE DILIGENCE: Careful investigation before making a business deal.",
+    "public_data": {
+      "prompt": "Careful investigation before making a business deal.",
+      "wordLengths": [
+        3,
+        9
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-hard-8",
+    "game": "shuffle",
+    "difficulty": "hard",
+    "title": "SUPPLY CHAIN",
+    "answers": [
+      "SUPPLY CHAIN"
+    ],
+    "explanation": "SUPPLY CHAIN: The network moving a product from suppliers to customers.",
+    "public_data": {
+      "prompt": "The network moving a product from suppliers to customers.",
+      "wordLengths": [
+        6,
+        5
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-hard-9",
+    "game": "shuffle",
+    "difficulty": "hard",
+    "title": "UNIT ECONOMICS",
+    "answers": [
+      "UNIT ECONOMICS"
+    ],
+    "explanation": "UNIT ECONOMICS: Revenue and costs considered for one unit or customer.",
+    "public_data": {
+      "prompt": "Revenue and costs considered for one unit or customer.",
+      "wordLengths": [
+        4,
+        9
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "shuffle-hard-10",
+    "game": "shuffle",
+    "difficulty": "hard",
+    "title": "BUSINESS MODEL",
+    "answers": [
+      "BUSINESS MODEL"
+    ],
+    "explanation": "BUSINESS MODEL: How a business creates, delivers and captures value.",
+    "public_data": {
+      "prompt": "How a business creates, delivers and captures value.",
+      "wordLengths": [
+        8,
+        5
+      ]
+    },
+    "source": null
+  },
+  {
+    "id": "brand-easy-1",
+    "game": "brand",
+    "difficulty": "easy",
+    "title": "Google",
+    "answers": [
+      "Google"
+    ],
+    "explanation": "Google: My wider family includes maps, email and tools for working together. A colourful letter sits above a familiar search box.",
+    "source": "https://about.google/",
+    "public_data": {
+      "clues": [
+        "A question often sends people to my front door.",
+        "My wider family includes maps, email and tools for working together.",
+        "A colourful letter sits above a familiar search box."
+      ]
+    }
+  },
+  {
+    "id": "brand-easy-2",
+    "game": "brand",
+    "difficulty": "easy",
+    "title": "YouTube",
+    "answers": [
+      "YouTube"
+    ],
+    "explanation": "YouTube: Creators build channels here, and viewers subscribe to them. A red play symbol is at the centre of my identity.",
+    "source": "https://www.youtube.com/about/",
+    "public_data": {
+      "clues": [
+        "People come to me to learn a skill or lose track of time.",
+        "Creators build channels here, and viewers subscribe to them.",
+        "A red play symbol is at the centre of my identity."
+      ]
+    }
+  },
+  {
+    "id": "brand-easy-3",
+    "game": "brand",
+    "difficulty": "easy",
+    "title": "WhatsApp",
+    "answers": [
+      "WhatsApp"
+    ],
+    "explanation": "WhatsApp: My conversations can include voice notes, calls and disappearing updates. My green speech bubble contains a telephone handset.",
+    "source": "https://www.whatsapp.com/",
+    "public_data": {
+      "clues": [
+        "I often carry both family plans and group-project reminders.",
+        "My conversations can include voice notes, calls and disappearing updates.",
+        "My green speech bubble contains a telephone handset."
+      ]
+    }
+  },
+  {
+    "id": "brand-easy-4",
+    "game": "brand",
+    "difficulty": "easy",
+    "title": "Netflix",
+    "answers": [
+      "Netflix"
+    ],
+    "explanation": "Netflix: I commission original entertainment as well as offering licensed shows. A red initial appears before many streaming sessions.",
+    "source": "https://about.netflix.com/",
+    "public_data": {
+      "clues": [
+        "One more episode can turn into a very late night with me.",
+        "I commission original entertainment as well as offering licensed shows.",
+        "A red initial appears before many streaming sessions."
+      ]
+    }
+  },
+  {
+    "id": "brand-easy-5",
+    "game": "brand",
+    "difficulty": "easy",
+    "title": "Spotify",
+    "answers": [
+      "Spotify"
+    ],
+    "explanation": "Spotify: Listeners organise playlists and receive personal listening summaries. My green circular mark contains three curved sound lines.",
+    "source": "https://www.spotify.com/",
+    "public_data": {
+      "clues": [
+        "I can provide the soundtrack to a commute or study session.",
+        "Listeners organise playlists and receive personal listening summaries.",
+        "My green circular mark contains three curved sound lines."
+      ]
+    }
+  },
+  {
+    "id": "brand-easy-6",
+    "game": "brand",
+    "difficulty": "easy",
+    "title": "Uber",
+    "answers": [
+      "Uber"
+    ],
+    "explanation": "Uber: Customers can compare a trip estimate and follow their driver on a map. The same account can help arrange a ride or a delivered meal.",
+    "source": "https://www.uber.com/",
+    "public_data": {
+      "clues": [
+        "I connect demand with people already moving through a city.",
+        "Customers can compare a trip estimate and follow their driver on a map.",
+        "The same account can help arrange a ride or a delivered meal."
+      ]
+    }
+  },
+  {
+    "id": "brand-easy-7",
+    "game": "brand",
+    "difficulty": "easy",
+    "title": "Apple",
+    "answers": [
+      "Apple"
+    ],
+    "explanation": "Apple: My devices are built to work closely together in one ecosystem. My minimal symbol is a piece of fruit with a bite missing.",
+    "source": "https://www.apple.com/",
+    "public_data": {
+      "clues": [
+        "I put design, hardware and software under one roof.",
+        "My devices are built to work closely together in one ecosystem.",
+        "My minimal symbol is a piece of fruit with a bite missing."
+      ]
+    }
+  },
+  {
+    "id": "brand-easy-8",
+    "game": "brand",
+    "difficulty": "easy",
+    "title": "Red Bull",
+    "answers": [
+      "Red Bull"
+    ],
+    "explanation": "Red Bull: My name appears around motorsport and extreme-sport events. Two charging animals face each other against a yellow disc on my cans.",
+    "source": "https://www.redbull.com/us-en/energydrink",
+    "public_data": {
+      "clues": [
+        "I promote a lifestyle of energy, performance and daring.",
+        "My name appears around motorsport and extreme-sport events.",
+        "Two charging animals face each other against a yellow disc on my cans."
+      ]
+    }
+  },
+  {
+    "id": "brand-medium-1",
+    "game": "brand",
+    "difficulty": "medium",
+    "title": "PickMe",
+    "answers": [
+      "PickMe",
+      "Pick Me"
+    ],
+    "explanation": "PickMe: My Sri Lankan platform connects people with rides and deliveries. A tuk-tuk journey and a meal order can begin in the same yellow-branded app.",
+    "source": "https://pickme.lk/",
+    "public_data": {
+      "clues": [
+        "I turn local transport availability into something you can request by phone.",
+        "My Sri Lankan platform connects people with rides and deliveries.",
+        "A tuk-tuk journey and a meal order can begin in the same yellow-branded app."
+      ]
+    }
+  },
+  {
+    "id": "brand-medium-2",
+    "game": "brand",
+    "difficulty": "medium",
+    "title": "Canva",
+    "answers": [
+      "Canva"
+    ],
+    "explanation": "Canva: Templates and drag-and-drop tools make visual work accessible to non-designers. A class presentation, social post and event poster can all start in my browser-based editor.",
+    "source": "https://www.canva.com/about/",
+    "public_data": {
+      "clues": [
+        "I help people turn a blank page into something ready to share.",
+        "Templates and drag-and-drop tools make visual work accessible to non-designers.",
+        "A class presentation, social post and event poster can all start in my browser-based editor."
+      ]
+    }
+  },
+  {
+    "id": "brand-medium-3",
+    "game": "brand",
+    "difficulty": "medium",
+    "title": "Samsung",
+    "answers": [
+      "Samsung"
+    ],
+    "explanation": "Samsung: My range spans phones, screens and household appliances. A galaxy is the identity of my mobile-device family.",
+    "source": "https://www.samsung.com/",
+    "public_data": {
+      "clues": [
+        "My products can be found both in pockets and around the home.",
+        "My range spans phones, screens and household appliances.",
+        "A galaxy is the identity of my mobile-device family."
+      ]
+    }
+  },
+  {
+    "id": "brand-medium-4",
+    "game": "brand",
+    "difficulty": "medium",
+    "title": "Nike",
+    "answers": [
+      "Nike"
+    ],
+    "explanation": "Nike: Footwear, sportswear and athlete partnerships are central to my business. My simple curved tick can identify a shoe without any written name.",
+    "source": "https://about.nike.com/",
+    "public_data": {
+      "clues": [
+        "I build a strong connection between identity and athletic effort.",
+        "Footwear, sportswear and athlete partnerships are central to my business.",
+        "My simple curved tick can identify a shoe without any written name."
+      ]
+    }
+  },
+  {
+    "id": "brand-medium-5",
+    "game": "brand",
+    "difficulty": "medium",
+    "title": "Elephant House",
+    "answers": [
+      "Elephant House"
+    ],
+    "explanation": "Elephant House: My range brings together carbonated drinks and ice cream. Cream Soda and a well-known local ginger beer belong to my drinks family.",
+    "source": "https://www.elephanthouse.lk/exports/",
+    "public_data": {
+      "clues": [
+        "I am part of both refreshment breaks and frozen celebrations in Sri Lanka.",
+        "My range brings together carbonated drinks and ice cream.",
+        "Cream Soda and a well-known local ginger beer belong to my drinks family."
+      ]
+    }
+  },
+  {
+    "id": "brand-medium-6",
+    "game": "brand",
+    "difficulty": "medium",
+    "title": "Dialog",
+    "answers": [
+      "Dialog"
+    ],
+    "explanation": "Dialog: Mobile connections, home broadband and television sit in my portfolio. A folded, multicoloured geometric symbol appears on my reload and SIM branding.",
+    "source": "https://dialog.lk/",
+    "public_data": {
+      "clues": [
+        "My services help Sri Lankans stay connected at home and on the move.",
+        "Mobile connections, home broadband and television sit in my portfolio.",
+        "A folded, multicoloured geometric symbol appears on my reload and SIM branding."
+      ]
+    }
+  },
+  {
+    "id": "brand-medium-7",
+    "game": "brand",
+    "difficulty": "medium",
+    "title": "Munchee",
+    "answers": [
+      "Munchee"
+    ],
+    "explanation": "Munchee: I am a Sri Lankan biscuit brand within the CBL family. Super Cream Cracker and Tikiri Marie are among my biscuit names.",
+    "source": "https://www.cbllk.com/our-history",
+    "public_data": {
+      "clues": [
+        "I often appear beside a cup of tea or inside a school snack bag.",
+        "I am a Sri Lankan biscuit brand within the CBL family.",
+        "Super Cream Cracker and Tikiri Marie are among my biscuit names."
+      ]
+    }
+  },
+  {
+    "id": "brand-medium-8",
+    "game": "brand",
+    "difficulty": "medium",
+    "title": "Dilmah",
+    "answers": [
+      "Dilmah"
+    ],
+    "explanation": "Dilmah: Single-origin Ceylon tea is central to my identity. My founder was Merrill J. Fernando; my name combines those of his two sons.",
+    "source": "https://www.dilmahtea.com/",
+    "public_data": {
+      "clues": [
+        "I took a Sri Lankan agricultural product to an international audience.",
+        "Single-origin Ceylon tea is central to my identity.",
+        "My founder was Merrill J. Fernando; my name combines those of his two sons."
+      ]
+    }
+  },
+  {
+    "id": "brand-hard-1",
+    "game": "brand",
+    "difficulty": "hard",
+    "title": "Keells",
+    "answers": [
+      "Keells",
+      "Keells Super"
+    ],
+    "explanation": "Keells: I run a Sri Lankan supermarket chain within a long-established diversified business group. Green is a strong part of my supermarket identity, from signs to shopping bags.",
+    "source": "https://www.keellssuper.com/",
+    "public_data": {
+      "clues": [
+        "My everyday business depends on fresh stock, convenient locations and repeat visits.",
+        "I run a Sri Lankan supermarket chain within a long-established diversified business group.",
+        "Green is a strong part of my supermarket identity, from signs to shopping bags."
+      ]
+    }
+  },
+  {
+    "id": "brand-hard-2",
+    "game": "brand",
+    "difficulty": "hard",
+    "title": "Cargills",
+    "answers": [
+      "Cargills",
+      "Cargills Food City",
+      "Food City"
+    ],
+    "explanation": "Cargills: A nationwide supermarket network sits alongside my food-manufacturing interests. Food City is the name above many of my supermarket doors.",
+    "source": "https://www.cargillsceylon.com/retail/",
+    "public_data": {
+      "clues": [
+        "I link household shopping with a wider Sri Lankan food business.",
+        "A nationwide supermarket network sits alongside my food-manufacturing interests.",
+        "Food City is the name above many of my supermarket doors."
+      ]
+    }
+  },
+  {
+    "id": "brand-hard-3",
+    "game": "brand",
+    "difficulty": "hard",
+    "title": "Daraz",
+    "answers": [
+      "Daraz"
+    ],
+    "explanation": "Daraz: In Sri Lanka, my marketplace offers categories from electronics to household goods. My orange branding is associated with large double-digit-date shopping campaigns.",
+    "source": "https://www.daraz.lk/",
+    "public_data": {
+      "clues": [
+        "I bring many independent sellers into a single digital shopping destination.",
+        "In Sri Lanka, my marketplace offers categories from electronics to household goods.",
+        "My orange branding is associated with large double-digit-date shopping campaigns."
+      ]
+    }
+  },
+  {
+    "id": "brand-hard-4",
+    "game": "brand",
+    "difficulty": "hard",
+    "title": "Maliban",
+    "answers": [
+      "Maliban"
+    ],
+    "explanation": "Maliban: Biscuits are central to my business, alongside a wider food portfolio. Gold Marie, Lemon Puff and Cream Cracker appear in my biscuit range.",
+    "source": "https://www.malibangroup.com/",
+    "public_data": {
+      "clues": [
+        "I turned a familiar tea-time habit into an enduring Sri Lankan brand.",
+        "Biscuits are central to my business, alongside a wider food portfolio.",
+        "Gold Marie, Lemon Puff and Cream Cracker appear in my biscuit range."
+      ]
+    }
+  },
+  {
+    "id": "brand-hard-5",
+    "game": "brand",
+    "difficulty": "hard",
+    "title": "Spa Ceylon",
+    "answers": [
+      "Spa Ceylon",
+      "SpaCeylon"
+    ],
+    "explanation": "Spa Ceylon: Ayurveda-inspired bath, body and home-aroma products are central to my range. Bright decorative packaging and a royal-elephant motif help identify my stores.",
+    "source": "https://lk.spaceylon.com/",
+    "public_data": {
+      "clues": [
+        "I sell a sensory experience rooted in the island’s wellbeing traditions.",
+        "Ayurveda-inspired bath, body and home-aroma products are central to my range.",
+        "Bright decorative packaging and a royal-elephant motif help identify my stores."
+      ]
+    }
+  },
+  {
+    "id": "brand-hard-6",
+    "game": "brand",
+    "difficulty": "hard",
+    "title": "Singer",
+    "answers": [
+      "Singer"
+    ],
+    "explanation": "Singer: Sri Lankan customers now buy appliances and electronics from my showrooms. Sewing machines were the product that made my name familiar in many homes.",
+    "source": "https://www.singersl.com/",
+    "public_data": {
+      "clues": [
+        "My story connects an old household craft with modern home retail.",
+        "Sri Lankan customers now buy appliances and electronics from my showrooms.",
+        "Sewing machines were the product that made my name familiar in many homes."
+      ]
+    }
+  },
+  {
+    "id": "brand-hard-7",
+    "game": "brand",
+    "difficulty": "hard",
+    "title": "Airbnb",
+    "answers": [
+      "Airbnb"
+    ],
+    "explanation": "Airbnb: Hosts list accommodation while travellers compare places and reviews. Instead of a hotel room, a booking might place you inside someone’s apartment.",
+    "source": "https://news.airbnb.com/about-us/",
+    "public_data": {
+      "clues": [
+        "My model lets people earn from space they already have.",
+        "Hosts list accommodation while travellers compare places and reviews.",
+        "Instead of a hotel room, a booking might place you inside someone’s apartment."
+      ]
+    }
+  },
+  {
+    "id": "brand-hard-8",
+    "game": "brand",
+    "difficulty": "hard",
+    "title": "IKEA",
+    "answers": [
+      "IKEA"
+    ],
+    "explanation": "IKEA: My model is associated with flat-pack furniture and customer assembly. A Swedish identity, blue-and-yellow stores and furniture showrooms help distinguish me.",
+    "source": "https://www.ikea.com/",
+    "public_data": {
+      "clues": [
+        "I make room design part of a large-scale retail experience.",
+        "My model is associated with flat-pack furniture and customer assembly.",
+        "A Swedish identity, blue-and-yellow stores and furniture showrooms help distinguish me."
+      ]
+    }
+  },
+  {
+    "id": "pivot-easy-1",
+    "game": "deal",
+    "difficulty": "easy",
+    "title": "Launch-day checkout",
+    "answers": [
+      "b"
+    ],
+    "explanation": "The tested alternative preserves a working purchase path and order records while the fault is fixed.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Launch-day checkout",
+      "scenario": "Your launch is tomorrow. Checkout fails in testing. A tested payment alternative is available.",
+      "objective": "Take reliable, traceable orders.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cancel the launch without investigating"
+        },
+        {
+          "id": "b",
+          "text": "Use the tested alternative and explain the change"
+        },
+        {
+          "id": "c",
+          "text": "Take payments without recording orders"
+        },
+        {
+          "id": "d",
+          "text": "Launch the broken checkout"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-easy-2",
+    "game": "deal",
+    "difficulty": "easy",
+    "title": "The mystery feature",
+    "answers": [
+      "d"
+    ],
+    "explanation": "Interviews with target customers test the underlying problem before development time is committed.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The mystery feature",
+      "scenario": "You can interview five target customers today, or spend the day building an unrequested feature.",
+      "objective": "Learn which problem matters before building.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ask only your own team"
+        },
+        {
+          "id": "b",
+          "text": "Copy a competitor’s screen"
+        },
+        {
+          "id": "c",
+          "text": "Build the feature first"
+        },
+        {
+          "id": "d",
+          "text": "Interview the five target customers"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-easy-3",
+    "game": "deal",
+    "difficulty": "easy",
+    "title": "Wrong delivery",
+    "answers": [
+      "b"
+    ],
+    "explanation": "Acknowledge the confirmed mistake and offer a specific remedy rather than adding friction.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Wrong delivery",
+      "scenario": "A customer receives the wrong item. Your records confirm the packing mistake.",
+      "objective": "Correct the mistake and retain trust.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ask them to pay for another item"
+        },
+        {
+          "id": "b",
+          "text": "Offer a clear replacement or refund"
+        },
+        {
+          "id": "c",
+          "text": "Wait for a public complaint"
+        },
+        {
+          "id": "d",
+          "text": "Delete the support message"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-easy-4",
+    "game": "deal",
+    "difficulty": "easy",
+    "title": "The empty shelf",
+    "answers": [
+      "d"
+    ],
+    "explanation": "Correct the listing and communicate with existing buyers so new orders do not rely on a false delivery promise.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The empty shelf",
+      "scenario": "A product is out of stock, but your shop still promises next-day delivery.",
+      "objective": "Stop customers buying an unavailable promise.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep the promise until someone complains"
+        },
+        {
+          "id": "b",
+          "text": "Increase advertising"
+        },
+        {
+          "id": "c",
+          "text": "Hide support contact details"
+        },
+        {
+          "id": "d",
+          "text": "Update availability and notify affected buyers"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-easy-5",
+    "game": "deal",
+    "difficulty": "easy",
+    "title": "The forgotten owner",
+    "answers": [
+      "a"
+    ],
+    "explanation": "An explicit owner and deadline turn a shared assumption into an accountable action.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The forgotten owner",
+      "scenario": "Three teammates assume someone else is contacting the venue. The deadline is today.",
+      "objective": "Get the booking confirmed today.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Assign an owner and a confirmation deadline"
+        },
+        {
+          "id": "b",
+          "text": "Wait for a volunteer"
+        },
+        {
+          "id": "c",
+          "text": "Book a second venue without checking"
+        },
+        {
+          "id": "d",
+          "text": "Create another group chat only"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-easy-6",
+    "game": "deal",
+    "difficulty": "easy",
+    "title": "First ten users",
+    "answers": [
+      "a"
+    ],
+    "explanation": "Repeated task failure identifies a usability problem worth fixing before adding traffic or features.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "First ten users",
+      "scenario": "Ten people try your prototype. Six cannot find the main action button.",
+      "objective": "Remove the clearest obstacle to completing the task.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Make the main action easier to find and retest"
+        },
+        {
+          "id": "b",
+          "text": "Buy more ads for the same screen"
+        },
+        {
+          "id": "c",
+          "text": "Add more optional features"
+        },
+        {
+          "id": "d",
+          "text": "Change the company name"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-easy-7",
+    "game": "deal",
+    "difficulty": "easy",
+    "title": "The missing brief",
+    "answers": [
+      "b"
+    ],
+    "explanation": "A short agreed brief establishes the communication goal before design effort is spent.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The missing brief",
+      "scenario": "A designer is about to begin, but nobody has agreed what the poster should communicate.",
+      "objective": "Avoid unnecessary design rework.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Send feedback after printing"
+        },
+        {
+          "id": "b",
+          "text": "Agree audience, message and required details first"
+        },
+        {
+          "id": "c",
+          "text": "Request ten random designs"
+        },
+        {
+          "id": "d",
+          "text": "Choose a colour and skip the message"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-easy-8",
+    "game": "deal",
+    "difficulty": "easy",
+    "title": "Sold-out workshop",
+    "answers": [
+      "d"
+    ],
+    "explanation": "A waiting list records demand without falsely confirming additional capacity.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Sold-out workshop",
+      "scenario": "Every confirmed seat is filled. More people want to attend.",
+      "objective": "Avoid promising seats you cannot provide.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep selling confirmed seats"
+        },
+        {
+          "id": "b",
+          "text": "Remove capacity details"
+        },
+        {
+          "id": "c",
+          "text": "Let all buyers discover the issue at the door"
+        },
+        {
+          "id": "d",
+          "text": "Open a clearly labelled waiting list"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-easy-9",
+    "game": "deal",
+    "difficulty": "easy",
+    "title": "A risky testimonial",
+    "answers": [
+      "a"
+    ],
+    "explanation": "Confirm permission for the actual wording and attribution before using the customer’s identity.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "A risky testimonial",
+      "scenario": "You want to publish a customer quote with their name and photo. They have not agreed.",
+      "objective": "Use a genuine testimonial with permission.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ask for approval of the quote and attribution"
+        },
+        {
+          "id": "b",
+          "text": "Invent a similar quote"
+        },
+        {
+          "id": "c",
+          "text": "Assume a purchase grants permission"
+        },
+        {
+          "id": "d",
+          "text": "Publish before asking"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-easy-10",
+    "game": "deal",
+    "difficulty": "easy",
+    "title": "The unclear price",
+    "answers": [
+      "a"
+    ],
+    "explanation": "Show the full pricing terms before purchase so customers can make an informed choice.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The unclear price",
+      "scenario": "Customers keep asking whether delivery is included. It is charged separately.",
+      "objective": "Make the purchase cost clear before checkout.",
+      "options": [
+        {
+          "id": "a",
+          "text": "State the item price and delivery charge clearly"
+        },
+        {
+          "id": "b",
+          "text": "Tell only customers who ask"
+        },
+        {
+          "id": "c",
+          "text": "Hide the fee until payment"
+        },
+        {
+          "id": "d",
+          "text": "Remove all prices"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-medium-1",
+    "game": "deal",
+    "difficulty": "medium",
+    "title": "A popular broken page",
+    "answers": [
+      "a"
+    ],
+    "explanation": "More traffic cannot fix a blocked purchase path. Repair and test that path first.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "A popular broken page",
+      "scenario": "Your campaign brings many visitors, but a checkout error prevents purchases.",
+      "objective": "Restore the purchase path before increasing traffic.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fix checkout and verify a successful test order"
+        },
+        {
+          "id": "b",
+          "text": "Redesign the logo"
+        },
+        {
+          "id": "c",
+          "text": "Add a second discount to the broken page"
+        },
+        {
+          "id": "d",
+          "text": "Double the ad budget"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-medium-2",
+    "game": "deal",
+    "difficulty": "medium",
+    "title": "Orders or capacity?",
+    "answers": [
+      "a"
+    ],
+    "explanation": "Control incoming commitments and give affected customers clear options instead of hiding the capacity problem.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Orders or capacity?",
+      "scenario": "A promotion brings more orders than the team can fulfil by the advertised date.",
+      "objective": "Make promises the team can actually keep.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Limit new orders and offer honest revised delivery choices"
+        },
+        {
+          "id": "b",
+          "text": "Silently substitute a lower-quality product"
+        },
+        {
+          "id": "c",
+          "text": "Keep accepting every order with the same date"
+        },
+        {
+          "id": "d",
+          "text": "Stop replying to buyers"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-medium-3",
+    "game": "deal",
+    "difficulty": "medium",
+    "title": "One loud request",
+    "answers": [
+      "b"
+    ],
+    "explanation": "Address the demonstrated reliability issue and assess the new request before committing extra work.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "One loud request",
+      "scenario": "One large prospect asks for a custom feature. Your existing users urgently need a reliability fix.",
+      "objective": "Keep current commitments without promising unplanned work.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Build the custom feature without estimating it"
+        },
+        {
+          "id": "b",
+          "text": "Prioritise the reliability fix and scope the request separately"
+        },
+        {
+          "id": "c",
+          "text": "Promise both for tomorrow"
+        },
+        {
+          "id": "d",
+          "text": "Ignore current users"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-medium-4",
+    "game": "deal",
+    "difficulty": "medium",
+    "title": "The discount trap",
+    "answers": [
+      "d"
+    ],
+    "explanation": "An offer needs workable economics and delivery capacity; engagement alone cannot establish either.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The discount trap",
+      "scenario": "A discount campaign is planned, but nobody has checked its costs or fulfilment capacity.",
+      "objective": "Test whether the offer is workable before launch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Publish it to create urgency"
+        },
+        {
+          "id": "b",
+          "text": "Match the biggest competitor’s discount"
+        },
+        {
+          "id": "c",
+          "text": "Judge it only by likes"
+        },
+        {
+          "id": "d",
+          "text": "Check contribution, stock and capacity first"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-medium-5",
+    "game": "deal",
+    "difficulty": "medium",
+    "title": "The wrong audience",
+    "answers": [
+      "a"
+    ],
+    "explanation": "Feedback is most relevant when it comes from the intended buyers and their real operating context.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The wrong audience",
+      "scenario": "Students love your prototype, but the product is designed for small-shop owners.",
+      "objective": "Validate demand in the intended customer group.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Test the prototype with small-shop owners"
+        },
+        {
+          "id": "b",
+          "text": "Launch nationwide immediately"
+        },
+        {
+          "id": "c",
+          "text": "Stop all research"
+        },
+        {
+          "id": "d",
+          "text": "Treat student praise as proven shop demand"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-medium-6",
+    "game": "deal",
+    "difficulty": "medium",
+    "title": "One shared password",
+    "answers": [
+      "a"
+    ],
+    "explanation": "Individual access with suitable permissions makes responsibility clearer and allows access to be revoked separately.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "One shared password",
+      "scenario": "Five volunteers share one admin account. Nobody can tell who changed an order.",
+      "objective": "Improve accountability while keeping access available.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Give each volunteer appropriate individual access"
+        },
+        {
+          "id": "b",
+          "text": "Create another shared password"
+        },
+        {
+          "id": "c",
+          "text": "Put the password in a public chat"
+        },
+        {
+          "id": "d",
+          "text": "Turn off order history"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-medium-7",
+    "game": "deal",
+    "difficulty": "medium",
+    "title": "A convincing complaint",
+    "answers": [
+      "b"
+    ],
+    "explanation": "Acknowledge the concern, verify the facts and resolve the specific case without exposing personal information.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "A convincing complaint",
+      "scenario": "One detailed negative review appears. You have not checked what happened.",
+      "objective": "Respond fairly using verified information.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Post the customer’s personal details"
+        },
+        {
+          "id": "b",
+          "text": "Acknowledge it and investigate the order privately"
+        },
+        {
+          "id": "c",
+          "text": "Accuse the reviewer of lying"
+        },
+        {
+          "id": "d",
+          "text": "Promise compensation before identifying the order"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-medium-8",
+    "game": "deal",
+    "difficulty": "medium",
+    "title": "The silent pilot",
+    "answers": [
+      "d"
+    ],
+    "explanation": "A large signup count does not explain repeat use. Investigate the actual point of abandonment.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The silent pilot",
+      "scenario": "A free pilot has many signups but almost no repeat use.",
+      "objective": "Find the barrier to continued use.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Count signups as retention"
+        },
+        {
+          "id": "b",
+          "text": "Buy more traffic immediately"
+        },
+        {
+          "id": "c",
+          "text": "Add a compulsory long contract"
+        },
+        {
+          "id": "d",
+          "text": "Interview inactive users and inspect where usage stops"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-medium-9",
+    "game": "deal",
+    "difficulty": "medium",
+    "title": "Two deadlines",
+    "answers": [
+      "a"
+    ],
+    "explanation": "Make the trade-off explicit: protect the essential workflow and communicate a realistic revised commitment.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Two deadlines",
+      "scenario": "Your team cannot deliver both promised features on Friday. Customers rely on one for their main task.",
+      "objective": "Protect the main task and communicate a feasible plan.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prioritise the essential feature and agree a revised date for the other"
+        },
+        {
+          "id": "b",
+          "text": "Remove both without notice"
+        },
+        {
+          "id": "c",
+          "text": "Add more features to the sprint"
+        },
+        {
+          "id": "d",
+          "text": "Promise both unchanged"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-medium-10",
+    "game": "deal",
+    "difficulty": "medium",
+    "title": "The new supplier",
+    "answers": [
+      "a"
+    ],
+    "explanation": "Verification and a small test order gather evidence before committing the full budget and customer promises.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The new supplier",
+      "scenario": "An unknown supplier offers a large order at a lower price, with full payment requested upfront.",
+      "objective": "Check delivery and quality before taking a large exposure.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Verify the supplier and test a small order first"
+        },
+        {
+          "id": "b",
+          "text": "Promise customers stock before verification"
+        },
+        {
+          "id": "c",
+          "text": "Transfer the full amount today"
+        },
+        {
+          "id": "d",
+          "text": "Ignore all lower-price suppliers"
+        }
+      ],
+      "hasUpdate": false
+    }
+  },
+  {
+    "id": "pivot-hard-1",
+    "game": "deal",
+    "difficulty": "hard",
+    "title": "Venue curveball",
+    "answers": [
+      "a"
+    ],
+    "explanation": "The update rules out the smaller room. The accessible online option accommodates every confirmed attendee.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Venue curveball",
+      "scenario": "Your booked room becomes unavailable. You are comparing a smaller room with an online event.",
+      "objective": "Keep confirmed attendees together in an accessible session.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Move to the accessible online format and notify attendees"
+        },
+        {
+          "id": "b",
+          "text": "Keep the original venue in all messages"
+        },
+        {
+          "id": "c",
+          "text": "Cancel without checking alternatives"
+        },
+        {
+          "id": "d",
+          "text": "Move to the smaller room"
+        }
+      ],
+      "hasUpdate": true,
+      "update": "The smaller room fits only half the confirmed guests. Every confirmed guest can access the online format."
+    }
+  },
+  {
+    "id": "pivot-hard-2",
+    "game": "deal",
+    "difficulty": "hard",
+    "title": "Supplier switch",
+    "answers": [
+      "a"
+    ],
+    "explanation": "The new information confirms compatibility, so the tested substitute is a workable response rather than an untested shortcut.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Supplier switch",
+      "scenario": "A launch needs components. Your regular supplier is late; a new supplier offers immediate stock.",
+      "objective": "Use components that pass the required compatibility test.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use the tested substitute and update the delivery plan"
+        },
+        {
+          "id": "b",
+          "text": "Remove the compatibility requirement"
+        },
+        {
+          "id": "c",
+          "text": "Wait for the regular delivery"
+        },
+        {
+          "id": "d",
+          "text": "Ship the untested substitute"
+        }
+      ],
+      "hasUpdate": true,
+      "update": "The substitute has now passed the required test. The regular delivery cannot arrive before launch."
+    }
+  },
+  {
+    "id": "pivot-hard-3",
+    "game": "deal",
+    "difficulty": "hard",
+    "title": "The false alarm",
+    "answers": [
+      "b"
+    ],
+    "explanation": "The update separates a broken monitor from a working customer journey. Investigate the monitor without unnecessarily stopping verified purchases.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The false alarm",
+      "scenario": "A monitoring alert suggests checkout is failing. You are considering suspending sales.",
+      "objective": "Keep working purchases available while checking the reported fault.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Delete the monitoring history"
+        },
+        {
+          "id": "b",
+          "text": "Investigate the monitor while keeping verified checkout available"
+        },
+        {
+          "id": "c",
+          "text": "Suspend all sales for a week"
+        },
+        {
+          "id": "d",
+          "text": "Ignore the alert without checking"
+        }
+      ],
+      "hasUpdate": true,
+      "update": "Real customer orders and an independent test purchase both succeed. The alert comes from a failed monitoring account."
+    }
+  },
+  {
+    "id": "pivot-hard-4",
+    "game": "deal",
+    "difficulty": "hard",
+    "title": "The large booking",
+    "answers": [
+      "d"
+    ],
+    "explanation": "Existing confirmed bookings must be honoured. Only uncommitted capacity is available for the new request.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "The large booking",
+      "scenario": "A company wants every seat at your event. You are deciding whether to release the public allocation.",
+      "objective": "Honour existing confirmed bookings.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Give the company all seats"
+        },
+        {
+          "id": "b",
+          "text": "Cancel existing tickets without consultation"
+        },
+        {
+          "id": "c",
+          "text": "Hide the existing bookings"
+        },
+        {
+          "id": "d",
+          "text": "Offer only uncommitted capacity or a separate session"
+        }
+      ],
+      "hasUpdate": true,
+      "update": "Several public tickets have already been paid for and confirmed; those seats are not available to resell."
+    }
+  },
+  {
+    "id": "pivot-hard-5",
+    "game": "deal",
+    "difficulty": "hard",
+    "title": "A campaign correction",
+    "answers": [
+      "a"
+    ],
+    "explanation": "The confirmed production update invalidates the shipping promise, so correct it and communicate directly with affected buyers.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "A campaign correction",
+      "scenario": "Your campaign says orders ship today. A production check may affect that promise.",
+      "objective": "Publish a delivery statement supported by the latest confirmed evidence.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Correct the date and contact affected buyers"
+        },
+        {
+          "id": "b",
+          "text": "Wait for delivery complaints"
+        },
+        {
+          "id": "c",
+          "text": "Delete the order records"
+        },
+        {
+          "id": "d",
+          "text": "Keep today’s promise unchanged"
+        }
+      ],
+      "hasUpdate": true,
+      "update": "Production confirms nothing can ship today; the earliest verified dispatch date is three days later."
+    }
+  },
+  {
+    "id": "pivot-hard-6",
+    "game": "deal",
+    "difficulty": "hard",
+    "title": "Pilot priority",
+    "answers": [
+      "a"
+    ],
+    "explanation": "The new evidence locates the main failure in onboarding, before users reach the recurring task screen.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Pilot priority",
+      "scenario": "You can optimise either onboarding or the recurring task screen this week.",
+      "objective": "Fix the point where the target users are demonstrably getting stuck.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fix onboarding and repeat the first-use test"
+        },
+        {
+          "id": "b",
+          "text": "Rebrand the product"
+        },
+        {
+          "id": "c",
+          "text": "Add a new referral campaign"
+        },
+        {
+          "id": "d",
+          "text": "Optimise the recurring task screen only"
+        }
+      ],
+      "hasUpdate": true,
+      "update": "Observed tests show most target users cannot complete onboarding. Those who complete it can perform the main task."
+    }
+  },
+  {
+    "id": "pivot-hard-7",
+    "game": "deal",
+    "difficulty": "hard",
+    "title": "Partner branding",
+    "answers": [
+      "b"
+    ],
+    "explanation": "Permission for an internal presentation does not cover this public announcement. Obtain the right permission or use an approved asset.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Partner branding",
+      "scenario": "A partner asks to use a customer photo in tomorrow’s announcement. You are checking approval.",
+      "objective": "Publish only material covered by the actual permission.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Remove the credit but keep the photo"
+        },
+        {
+          "id": "b",
+          "text": "Replace it with an approved asset or obtain fresh permission"
+        },
+        {
+          "id": "c",
+          "text": "Assume any prior permission covers it"
+        },
+        {
+          "id": "d",
+          "text": "Publish and ask afterwards"
+        }
+      ],
+      "hasUpdate": true,
+      "update": "The customer approved that photo only for an internal presentation, not for public promotion."
+    }
+  },
+  {
+    "id": "pivot-hard-8",
+    "game": "deal",
+    "difficulty": "hard",
+    "title": "Capacity surprise",
+    "answers": [
+      "d"
+    ],
+    "explanation": "Two available sessions with confirmed seating can accommodate the paid bookings without inventing capacity.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Capacity surprise",
+      "scenario": "You are planning one combined workshop and checking room capacity.",
+      "objective": "Provide a confirmed seat for every paid booking.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep a single session with standing guests"
+        },
+        {
+          "id": "b",
+          "text": "Remove names from the booking list"
+        },
+        {
+          "id": "c",
+          "text": "Ask extra guests to leave at the door"
+        },
+        {
+          "id": "d",
+          "text": "Run two confirmed sessions and let guests select a slot"
+        }
+      ],
+      "hasUpdate": true,
+      "update": "The venue confirms half the expected seats, but offers a second equivalent time slot. All bookings can be accommodated across the two."
+    }
+  },
+  {
+    "id": "pivot-hard-9",
+    "game": "deal",
+    "difficulty": "hard",
+    "title": "Payment verification",
+    "answers": [
+      "a"
+    ],
+    "explanation": "A screenshot is not independent payment confirmation. Verify the actual transaction before dispatch.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Payment verification",
+      "scenario": "A buyer sends a payment screenshot and asks for immediate dispatch.",
+      "objective": "Dispatch only after independently verified payment.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Check the actual transaction and hold dispatch until verified"
+        },
+        {
+          "id": "b",
+          "text": "Ask the buyer to crop the screenshot"
+        },
+        {
+          "id": "c",
+          "text": "Publish their payment details"
+        },
+        {
+          "id": "d",
+          "text": "Dispatch based on the screenshot"
+        }
+      ],
+      "hasUpdate": true,
+      "update": "The payment dashboard has no matching transaction, and the screenshot’s reference does not match the order."
+    }
+  },
+  {
+    "id": "pivot-hard-10",
+    "game": "deal",
+    "difficulty": "hard",
+    "title": "Launch scope",
+    "answers": [
+      "a"
+    ],
+    "explanation": "The new evidence identifies a failure in the essential workflow. Optional additions do not remove that blocker.",
+    "source": "",
+    "public_data": {
+      "format": "pivot",
+      "prompt": "Launch scope",
+      "scenario": "You can launch a basic product or wait to include an optional dashboard.",
+      "objective": "Launch only when the essential workflow is verified.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fix and verify the essential workflow before launch"
+        },
+        {
+          "id": "b",
+          "text": "Prioritise the optional dashboard"
+        },
+        {
+          "id": "c",
+          "text": "Delay only to change colours"
+        },
+        {
+          "id": "d",
+          "text": "Ship without testing the main task"
+        }
+      ],
+      "hasUpdate": true,
+      "update": "Testing reveals the main task loses saved work. The optional dashboard works, but customers cannot reliably complete their core task."
+    }
+  }
+]
