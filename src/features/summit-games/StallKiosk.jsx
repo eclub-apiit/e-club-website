@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { ArrowRight, RotateCcw, CheckCircle2, XCircle, Award, Sparkles, Monitor, ArrowLeft } from 'lucide-react';
 import allQuestions from '../../../supabase/content/questions.json';
 
@@ -145,6 +145,10 @@ function shuffleArray(arr) {
 
 export default function StallKiosk({ initialStall = null }) {
   const [selectedStall, setSelectedStall] = useState(initialStall);
+
+  useEffect(() => {
+    setSelectedStall(initialStall);
+  }, [initialStall]);
   const [sessionKey, setSessionKey] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);

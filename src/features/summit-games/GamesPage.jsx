@@ -5,6 +5,7 @@ import {ArrowUpRight,ArrowRight,Pause,Play,Plus,Eye,Clock,Users,Copy,Download,Lo
 import {gamesApi,isConfigured,canRehearse} from './api';
 import {GAME_PATH,GAMES,LEVELS,planCounts,newToken,newId} from './rules';
 import GameSound from './GameSound';
+import StallKiosk from './StallKiosk';
 import './games.css';
 
 const readSaved=pin=>{try{return JSON.parse(localStorage.getItem(`sg-player-${pin}`)||'null');}catch{return null;}};
@@ -56,10 +57,10 @@ function Player({api,preset}){
  useEffect(()=>{setAnswer('');setResult(null);setMessage('');request.current=null;},[roundId]);
  const submit=async(value,hint=false)=>{if(!state)return;setBusy(true);setMessage('');const signature=`${roundId}:${hint}:${value}:${state.me.hints}`;if(request.current?.signature!==signature)request.current={signature,id:newId()};try{const result=await api.answer(identity.pin,identity.token,roundId,value,request.current.id,hint);if(!hint)setResult(result);request.current=null;await refresh();}catch(e){setMessage(e.message);await refresh();}finally{setBusy(false);}};
  if(!identity)return <Join api={api} preset={preset} onJoin={next=>{setIdentity(next);navigate(new URL(linkFor('',next.pin,api.isDemo)).pathname+new URL(linkFor('',next.pin,api.isDemo)).search,{replace:true});}}/>;
- const leave=()=>{setIdentity(null);setAnswer('');};
+ const leave=()=>{if(confirm('Leave this room? Your score in this session will be lost.')){setIdentity(null);setAnswer('');}};
  if(!state)return <section className="sg-panel"><h1>Finding your room…</h1><Notice error>{error}</Notice><Button secondary onClick={leave}>Back to join</Button></section>;
  const phase=state.room.phase,canAnswer=phase==='question'&&remaining>0&&!state.me.solved&&state.me.attempts<(state.room.game==='deal'?1:2);
- return <><div className="sg-room-strip"><div><span className="sg-kicker">{state.room.title}</span><p>{identity.nickname} <span>·</span> Room {state.room.pin}</p></div><div className="sg-player-tools"><GameSound state={state} now={now}/><button className="sg-text" onClick={leave}>Change room</button></div></div><Notice error>{error||message}</Notice>
+ return <><div className="sg-room-strip"><div><span className="sg-kicker">{state.room.title}</span><p>{identity.nickname} <span>·</span> Room {state.room.pin}</p></div><div className="sg-player-tools"><GameSound state={state} now={now}/>{(phase==='lobby'||phase==='finished')&&<button className="sg-text" onClick={leave}>Change room</button>}</div></div><Notice error>{error||message}</Notice>
   {phase==='lobby'?<div className="sg-waiting"><span className="sg-orbit" aria-hidden="true">↗</span><p className="sg-kicker">You’re in.</p><h1>Good ideas<br/><em>are gathering.</em></h1><p>The host will start the next game. Keep this screen open.</p><div className="sg-lobby-count"><Users size={18}/>{state.counts.players} in the room</div><Board entries={state.board} title="In the room" me={identity.id} total={state.counts.players}/></div>:
   <><div className="sg-round-meta"><div><p>{GAMES[state.room.game].name}</p><span className={`sg-level is-${state.round.difficulty}`}>{state.round.difficulty}</span><small>Round {state.room.roundNumber} / {state.room.roundCount}</small></div>{!['reveal','finished'].includes(phase)&&<ClockFace remaining={remaining} total={state.round.seconds} paused={phase==='paused'}/>}</div>
    {['reveal','finished'].includes(phase)?<><div className="sg-reveal"><p className="sg-kicker">{phase==='finished'?'That’s a wrap.':'The reveal'}</p><h1>{state.reveal?.answerLabel||state.reveal?.answer||'Well played.'}</h1><p>{state.reveal?.explanation}</p>{state.reveal?.voided&&<Notice>This round was voided. Its points are excluded.</Notice>}{state.me.solved&&!state.reveal?.voided&&<strong className="sg-earned">+{state.me.points} points this round</strong>}{phase==='finished'&&<p>The host can start another game in this same room.</p>}</div><RoundCountdown state={state} now={now}/><Board entries={state.board} me={identity.id} standing={state.me?.standing} total={state.counts.players}/></>:
@@ -115,13 +116,19 @@ function Host({api,preset}){
 }
 export default function GamesPage(){
  const {pathname,search}=useLocation(),params=new URLSearchParams(search),rehearsal=params.get('rehearsal')==='1',preset=/^\d{6}$/.test(params.get('room')||'')?params.get('room'):'';
- const role=pathname.replace(/\/$/,'').endsWith('/host')?'host':pathname.replace(/\/$/,'').endsWith('/screen')?'screen':'player';
+ const cleanPath = pathname.replace(/\/$/, '');
+ const isStall = cleanPath.includes('/stalls');
+ const stallType = cleanPath.endsWith('/founders-call') ? 'founders-call' : cleanPath.endsWith('/real-or-parody') ? 'real-or-parody' : null;
+ const role = cleanPath.endsWith('/host') ? 'host' : cleanPath.endsWith('/screen') ? 'screen' : isStall ? 'stall' : 'player';
  const [api,setApi]=useState(null),[error,setError]=useState('');
- useEffect(()=>{let cancelled=false;setApi(null);setError('');gamesApi(rehearsal).then(a=>{if(!cancelled)setApi(a);}).catch(e=>{if(!cancelled)setError(e.message);});return()=>{cancelled=true;};},[rehearsal]);
+ useEffect(()=>{
+  if (role === 'stall') return;
+  let cancelled=false;setApi(null);setError('');gamesApi(rehearsal).then(a=>{if(!cancelled)setApi(a);}).catch(e=>{if(!cancelled)setError(e.message);});return()=>{cancelled=true;};
+ },[rehearsal, role]);
  const unavailable=!rehearsal&&!isConfigured;
- return <div className={`sg-site ${role==='screen'?'is-screen':''}`}><a className="sg-skip" href="#sg-main">Skip to game</a><header className="sg-header"><Link to="/convergence-summit-2026/" aria-label="Back to the Convergence Summit"><img src="/summit/summit-wordmark.webp" alt="The Convergence Summit 2026" width="1817" height="448"/></Link><div><span>Convergence <b>Play</b></span><small>{role==='host'?'Host desk':role==='screen'?'The room’s screen':'Your next good move'}</small></div><nav aria-label="Game navigation">{role!=='player'&&<Link to={GAME_PATH+(rehearsal?'?rehearsal=1':'')}>Join a room</Link>}{role!=='host'&&<Link to={GAME_PATH+'/host'+(rehearsal?'?rehearsal=1':'')}>Host desk</Link>}</nav></header>
-  {rehearsal&&<div className="sg-demo-banner"><strong>Local rehearsal</strong><span>This browser only. Other devices need a connected live room.</span></div>}
-  <main id="sg-main" className="sg-main">{unavailable||error?<section className="sg-panel sg-setup"><p className="sg-kicker">Convergence Play</p><h1>The room is<br/><em>taking shape.</em></h1><p>{error||'Live play is not connected yet. The organiser needs to complete the Supabase setup.'}</p>{canRehearse&&<Link className="sg-button" to={GAME_PATH+'/host?rehearsal=1'}>Try a local rehearsal <ArrowUpRight size={18}/></Link>}<Link className="sg-text" to="/convergence-summit-2026/">Back to the summit</Link></section>:!api?<p role="status">Opening Convergence Play…</p>:role==='host'?<Host api={api} preset={preset}/>:role==='screen'?<Screen api={api} preset={preset}/>:<Player api={api} preset={preset}/>}</main>
-  <footer className="sg-footer"><span>Entrepreneurship Club of APIIT</span><p>Think a little differently.</p><Link to="/convergence-summit-2026/">Summit details <ArrowUpRight size={12}/></Link></footer>
+ return <div className={`sg-site ${role==='screen'?'is-screen':''}`}><a className="sg-skip" href="#sg-main">Skip to game</a><header className="sg-header"><Link to="/convergence-summit-2026/" aria-label="Back to the Convergence Summit"><img src="/summit/summit-wordmark.webp" alt="The Convergence Summit 2026" width="1817" height="448"/></Link><div><span>Convergence <b>Play</b></span><small>{role==='host'?'Host desk':role==='screen'?'The room’s screen':role==='stall'?'Stall Kiosk':'Your next good move'}</small></div><nav aria-label="Game navigation">{role==='host'&&<><Link to={GAME_PATH+(rehearsal?'?rehearsal=1':'')}>Player join</Link><Link to={GAME_PATH+'/stalls'}>Stall kiosks</Link></>}{role==='stall'&&<Link to={GAME_PATH+'/stalls'}>Switch stall</Link>}</nav></header>
+  {rehearsal&&role!=='stall'&&<div className="sg-demo-banner"><strong>Local rehearsal</strong><span>This browser only. Other devices need a connected live room.</span></div>}
+  <main id="sg-main" className="sg-main">{role==='stall'?<StallKiosk initialStall={stallType}/>:unavailable||error?<section className="sg-panel sg-setup"><p className="sg-kicker">Convergence Play</p><h1>The room is<br/><em>taking shape.</em></h1><p>{error||'Live play is not connected yet. The organiser needs to complete the Supabase setup.'}</p>{canRehearse&&<Link className="sg-button" to={GAME_PATH+'/host?rehearsal=1'}>Try a local rehearsal <ArrowUpRight size={18}/></Link>}<Link className="sg-text" to="/convergence-summit-2026/">Back to the summit</Link></section>:!api?<p role="status">Opening Convergence Play…</p>:role==='host'?<Host api={api} preset={preset}/>:role==='screen'?<Screen api={api} preset={preset}/>:<Player api={api} preset={preset}/>}</main>
+  <footer className="sg-footer"><span>Entrepreneurship Club of APIIT</span><p>Think a little differently.</p><div style={{display:'flex',gap:'18px',alignItems:'center'}}><Link to="/convergence-summit-2026/">Summit details <ArrowUpRight size={12}/></Link>{role!=='host'&&<Link to={GAME_PATH+'/host'} style={{opacity:0.6}}>Host desk <ArrowUpRight size={12}/></Link>}</div></footer>
  </div>;
 }
