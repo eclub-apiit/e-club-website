@@ -254,7 +254,7 @@ html.si-document{scroll-behavior:smooth;scroll-padding-top:110px;background:#060
 /* Digital edition: publication details are configured in event.js. */
 .si-digital-magazine{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(35px,7vw,110px);align-items:center;padding-block:100px;border-top:1px solid #a7dbcc22;scroll-margin-top:120px}
 .si-magazine-copy h2{font-size:clamp(36px,4.7vw,70px);line-height:1.1;letter-spacing:-.04em;font-weight:400;margin:24px 0}
-.si-magazine-copy h2 em{font-style:normal;color:#75d7c1}.si-magazine-copy>p:not(.si-eyebrow){max-width:550px;color:#afc4c3;line-height:1.9;font-size:16px}
+.si-magazine-copy h2 em{font-style:normal;color:#75d7c1}.si-magazine-copy>p:not(.si-eyebrow){max-width:550px;color:#afc4c3;line-height:1.9;font-size:16px}.si-magazine-copy .si-button{margin-top:28px}
 .si-magazine-status{display:flex;align-items:center;gap:10px;font-size:12px;color:#a4d6c9;margin:26px 0}.si-magazine-status>span{width:6px;height:6px;border-radius:50%;background:#75d7c1}
 .si-magazine-access{padding:28px;border:1px solid #9ccfb936;border-radius:5px;background:linear-gradient(145deg,#163b3760,#0b1b22 75%);max-width:410px;width:100%;justify-self:end}
 .si-magazine-access-top{display:flex;gap:13px;align-items:center;padding-bottom:20px;border-bottom:1px solid #ffffff17;color:#d7e5dc;font-size:16px}.si-magazine-access-top>span>small{display:block;font-size:9px;letter-spacing:.17em;color:#91b9ad;margin-top:5px}
