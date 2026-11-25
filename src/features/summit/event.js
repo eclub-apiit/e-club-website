@@ -26,7 +26,7 @@ export const summit = {
     introduction: "An inaugural summit bringing aspiring entrepreneurs, industry professionals, university students, academics, and innovators into one room to exchange experiences and inspire what comes next.",
     purpose: "The strongest ideas rarely grow in isolation. Convergence creates a space where perspectives meet, experiences are shared, and entrepreneurial ambition becomes action.",
   },
-  magazine: { title: "Innovator’s Digest", edition: 4, volume: 4, timing: "Following the panel discussion", url: "", qrImage: "" },
+  magazine: { title: "Innovator’s Digest", edition: 4, volume: 4, timing: "Following the panel discussion", url: "https://heyzine.com/flip-book/23310663a1.html", qrImage: "/summit/magazine-qr.png" },
   // Confirmed panelists supplied by the organisers. No moderator is assumed.
   speakers: [
     { id: "michael-sathasivam", confirmed: true, name: "Michael Sathasivam", role: "Regional CEO", organisation: "Koko", image: "/summit/panelists/Michael-panel.webp", imageAlt: "Michael Sathasivam" },
