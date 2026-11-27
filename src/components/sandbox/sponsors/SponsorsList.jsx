@@ -11,6 +11,9 @@ const SPONSORS_DATA = {
     { name: 'ACCA', img: '/sandbox/assets/acca-logo.png' },
     { name: 'Keells', img: '/sandbox/assets/keells-logo.png' },
   ],
+  'Well Wishes': [
+    { name: 'Protrans Logistics', img: '/sandbox/assets/protrans-logo.png' },
+  ],
   'Host & Organiser': [
     { name: 'Asia Pacific Institute of Information Technology (APIIT)', img: '/sandbox/assets/apiit-logo-black.jpg' },
     { name: 'Entrepreneurship Club of APIIT', img: '/sandbox/assets/eclub-logo.png' },
